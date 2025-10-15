@@ -1,0 +1,18 @@
+#cloud-config
+users:
+  - name: admin
+    gecos: Admin User
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: sudo
+    shell: /bin/bash
+    lock_passwd: false
+ssh_pwauth: true
+chpasswd:
+  list: |
+    admin:admin
+  expire: False
+runcmd:
+  # forzar que SSH acepte password (fallback)
+  - sed -i 's/^#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config || true
+  - sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config || true
+  - systemctl restart sshd || service ssh restart || true
