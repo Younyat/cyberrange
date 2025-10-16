@@ -1,16 +1,38 @@
 #!/usr/bin/env bash
 set -euo pipefail
+###############################################
+#  Configuración de Credenciales de OpenStack
+# =============================================
+# Reemplaza las siguientes variables con la información
+# obtenida del archivo `app-cred-app-openrc.sh`
+# descargado desde el Dashboard de OpenStack.
+###############################################
 
+# URL de autenticación del servicio Keystone
 export OS_AUTH_URL=http://192.168.0.10:5000
+
+# Nombre del proyecto o tenant asociado
 export OS_PROJECT_NAME=admin
+
+# Dominio del proyecto (por defecto: Default)
 export OS_PROJECT_DOMAIN_NAME=Default
+
+# Nombre de usuario administrador
 export OS_USERNAME=admin
+
+# Dominio del usuario (por defecto: Default)
 export OS_USER_DOMAIN_NAME=Default
+
+# Contraseña asociada al usuario o credencial
 export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+
+# Interfaz de acceso (public, internal o admin)
 export OS_INTERFACE=public
+
+# Versión de la API de identidad (normalmente 3)
 export OS_IDENTITY_API_VERSION=3
 
-
+###############################################
 
 if ! command -v jq >/dev/null 2>&1; then
   echo "Error: jq no está instalado. Instálalo (ej. apt install jq) y vuelve a probar."
@@ -49,24 +71,31 @@ fi
 
 PROVIDER_FILE=$BASE_DIR/tf_out/provider.tf
 
-cat > "$PROVIDER_FILE" <<'EOF'
-terraform {
-  required_providers {
-    openstack = {
-      source  = "terraform-provider-openstack/openstack"
-      version = "~> 1.52.1"
-    }
-  }
-}
+GEN_PROVIDER_SCRIPT="./generate_provider_from_clouds.sh"
 
-provider "openstack" {
-  auth_url    = "http://192.168.0.10:5000"
-  tenant_name = "admin"
-  user_name   = "admin"
-  password    = "JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s"
-  domain_name = "Default"
-}
-EOF
+echo "==============================================="
+echo "🚀 Iniciando generador principal de Terraform"
+echo "==============================================="
+
+# ------------------------------------------------------
+# 1️⃣ Comprobar si existe clouds.yaml y script generador
+# ------------------------------------------------------
+if [[ -f "/etc/kolla/clouds.yaml" && -f "$GEN_PROVIDER_SCRIPT" ]]; then
+    echo "✅ Detectado clouds.yaml en /etc/kolla y script generador."
+    echo "🔧 Ejecutando $GEN_PROVIDER_SCRIPT ..."
+    bash "$GEN_PROVIDER_SCRIPT"
+else
+    echo "⚠️ No se encontró /etc/kolla/clouds.yaml o el script $GEN_PROVIDER_SCRIPT."
+    echo "🚫 No se generará provider.tf hasta que existan ambos archivos."
+    echo "   ➜ Asegúrate de tener:"
+    echo "     - /etc/kolla/clouds.yaml"
+    echo "     - generate_provider_from_clouds.sh"
+    echo ""
+    echo "   Luego vuelve a ejecutar:"
+    echo "     bash main_generator_inicial.sh"
+    echo ""
+    exit 1
+fi
 
 echo "✅ Archivo provider.tf generado en $PROVIDER_FILE"
 

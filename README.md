@@ -6,10 +6,15 @@ Este documento describe los pasos necesarios para **instalar OpenStack**, **conf
 
 ## ⚙️ 1. Instalación de OpenStack
 
+Con el entorno virtual activado y las credenciales cargadas :
+
+```bash
+source /home/<usuario>/openstack_venv/bin/activate
+
 Comienza ejecutando el script de instalación:
 
 ```bash
-bash openstack-installer
+(openstack_venv)$ source openstack-installer.sh
 ```
 
 > 📂 Este archivo debe encontrarse dentro del directorio `openstack-installer`.
@@ -19,12 +24,18 @@ Una vez completada la instalación, podrás acceder al **Dashboard web de OpenSt
 ```
 /etc/kolla/clouds.yaml
 ```
+###############################################
+#  Configuración de Credenciales de OpenStack
+# =============================================
+# obtenida del archivo `app-cred-app-openrc.sh`
+# descargado desde el Dashboard de OpenStack.
+###############################################
 
 Desde el Dashboard, crea unas **credenciales de aplicación (Application Credentials)** con todos los roles habilitados y sin restricciones.  
 Descarga el archivo de credenciales resultante en formato `.sh` y ejecútalo en tu terminal:
 
 ```bash
-source file_credenciales.sh
+(openstack_venv)$ source app-cred-app-openrc.sh
 ```
 
 ---
@@ -59,14 +70,14 @@ En esta etapa se generarán los recursos básicos de OpenStack necesarios para l
 
 2. Ejecuta el script:
    ```bash
-   bash menu-initial.sh
+   (openstack_venv)$ source menu-initial.sh
    ```
 
    Este script creará automáticamente los archivos de configuración de Terraform (`.tf`) correspondientes a imágenes, sabores, redes y claves.
 
 3. Una vez generados, despliega los recursos en OpenStack:
    ```bash
-   bash ejecutar_terraform_inicial.sh
+   (openstack_venv)$ source ejecutar_terraform_inicial.sh
    ```
 
    Esto aplicará todos los cambios utilizando los comandos de Terraform.
@@ -77,13 +88,10 @@ En esta etapa se generarán los recursos básicos de OpenStack necesarios para l
 
 Con el entorno virtual activado y las credenciales cargadas, puedes comprobar que los recursos se han creado correctamente:
 
-```bash
-source /home/younes/openstack_venv/bin/activate
-
-openstack image list
-openstack flavor list
-openstack network list
-openstack keypair list
+(openstack_venv)$ openstack image list
+(openstack_venv)$ openstack flavor list
+(openstack_venv)$ openstack network list
+(openstack_venv)$ openstack keypair list
 ```
 
 > ✅ Si todos los recursos aparecen en la lista, la configuración inicial de OpenStack está completa.
@@ -117,7 +125,7 @@ gunicorn -w 4 -b localhost:5001 app:app
 
 ---
 
-### 🧩 OPCIÓN 2 — Lanzamiento con comprobación del puerto (recomendada)
+### 🟢 OPCIÓN 2 — Lanzamiento con comprobación del puerto (recomendada)
 
 Para un inicio más seguro y automatizado, utiliza el script **`start_dashboard.sh`**, que realiza comprobaciones previas antes de lanzar Gunicorn.
 
@@ -159,8 +167,4 @@ Desde ahí podrás interactuar con la interfaz web del Dashboard y las APIs de F
 
 ---
 
-# 🧠 Créditos
 
-Desarrollado por **Younes Assouyat**  
-Proyecto de integración **CyberRange UMA**  
-Universidad de Málaga — 2025
