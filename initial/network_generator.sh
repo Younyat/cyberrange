@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 # ======================================================
-# 🚀 Generador de red y router en OpenStack con Terraform
+# 🚀 Generador de red, router y grupos de seguridad en OpenStack con Terraform
 # Crea:
 #   - red_externa (10.0.2.0/24)
 #   - red_privada (192.168.100.0/24)
 #   - router_privado (con gateway externo e interfaz interna)
+#   - security_group_basico (SSH, ICMP, HTTP, HTTPS)
 # Autor: Younes Assouyat
 # ======================================================
 
@@ -13,7 +14,7 @@ set -e
 TF_FILE="network.tf"
 
 echo "==============================================="
-echo "🌐 Generador de redes y router en OpenStack"
+echo "🌐 Generador de redes, router y seguridad en OpenStack"
 echo "==============================================="
 
 # ------------------------------------------------------
@@ -37,9 +38,10 @@ echo "📝 Creando archivo Terraform: $TF_FILE ..."
 
 cat > "$TF_FILE" <<'EOF'
 ##############################################
-# 🚀 Infraestructura de Redes y Router en OpenStack
+# 🚀 Infraestructura de Redes, Router y Seguridad en OpenStack
 # Redes: red_privada y red_externa
 # Router: router_privado
+# Security Group: security_group_basico
 # Autor: Younes Assouyat
 ##############################################
 
@@ -98,6 +100,64 @@ resource "openstack_networking_router_interface_v2" "router_privado_interface" {
 }
 
 # -----------------------------
+# 🧱 Grupo de Seguridad Básico
+# -----------------------------
+resource "openstack_networking_secgroup_v2" "security_group_basico" {
+  name        = "security_group_basico"
+  description = "Reglas básicas: SSH, ICMP, HTTP, HTTPS"
+}
+
+# ✅ SSH (Puerto 22)
+resource "openstack_networking_secgroup_rule_v2" "ssh_in" {
+  direction         = "ingress"
+  ethertype         = "IPv4"
+  protocol          = "tcp"
+  port_range_min    = 22
+  port_range_max    = 22
+  remote_ip_prefix  = "0.0.0.0/0"
+  security_group_id = openstack_networking_secgroup_v2.security_group_basico.id
+}
+
+# ✅ ICMP (Ping)
+resource "openstack_networking_secgroup_rule_v2" "icmp_in" {
+  direction         = "ingress"
+  ethertype         = "IPv4"
+  protocol          = "icmp"
+  remote_ip_prefix  = "0.0.0.0/0"
+  security_group_id = openstack_networking_secgroup_v2.security_group_basico.id
+}
+
+# ✅ HTTP (Puerto 80)
+resource "openstack_networking_secgroup_rule_v2" "http_in" {
+  direction         = "ingress"
+  ethertype         = "IPv4"
+  protocol          = "tcp"
+  port_range_min    = 80
+  port_range_max    = 80
+  remote_ip_prefix  = "0.0.0.0/0"
+  security_group_id = openstack_networking_secgroup_v2.security_group_basico.id
+}
+
+# ✅ HTTPS (Puerto 443)
+resource "openstack_networking_secgroup_rule_v2" "https_in" {
+  direction         = "ingress"
+  ethertype         = "IPv4"
+  protocol          = "tcp"
+  port_range_min    = 443
+  port_range_max    = 443
+  remote_ip_prefix  = "0.0.0.0/0"
+  security_group_id = openstack_networking_secgroup_v2.security_group_basico.id
+}
+
+# ✅ Salida general (Egress)
+resource "openstack_networking_secgroup_rule_v2" "egress_out" {
+  direction         = "egress"
+  ethertype         = "IPv4"
+  remote_ip_prefix  = "0.0.0.0/0"
+  security_group_id = openstack_networking_secgroup_v2.security_group_basico.id
+}
+
+# -----------------------------
 # 📡 Salidas útiles
 # -----------------------------
 output "router_privado_info" {
@@ -108,6 +168,14 @@ output "router_privado_info" {
     internal_interface = openstack_networking_subnet_v2.red_privada_subnet.cidr
   }
 }
+
+output "security_group_basico_info" {
+  description = "Grupo de seguridad básico creado"
+  value = openstack_networking_secgroup_v2.security_group_basico.name
+}
 EOF
 
 echo "✅ Archivo '$TF_FILE' generado correctamente."
+echo ""
+echo "Puedes aplicar la configuración con:"
+echo "   terraform init && terraform apply -auto-approve"

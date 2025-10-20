@@ -6,8 +6,8 @@
             "name": "monitor 1",
             "type": "monitor",
             "position": {
-                "x": 673.9732260791086,
-                "y": 150.00213888856482
+                "x": 532.9810060526455,
+                "y": 225.99794542765133
             },
             "properties": {
                 "os": "Ubuntu22.04",
@@ -25,8 +25,8 @@
             "name": "attack 2",
             "type": "attack",
             "position": {
-                "x": 970.9568384752756,
-                "y": 380.9893929744725
+                "x": 1105.9493895644423,
+                "y": 450.98553057626265
             },
             "properties": {
                 "os": "debian-12",
@@ -44,8 +44,8 @@
             "name": "victim 3",
             "type": "victim",
             "position": {
-                "x": 952.9578316633867,
-                "y": 160.00158711739198
+                "x": 913.9599835709607,
+                "y": 200.99932485558338
             },
             "properties": {
                 "os": "debian-12",
@@ -61,11 +61,6 @@
     ],
     "edges": [
         {
-            "id": "edge_node2_node3",
-            "source": "node2",
-            "target": "node3"
-        },
-        {
             "id": "edge_node1_node3",
             "source": "node1",
             "target": "node3"
@@ -74,6 +69,11 @@
             "id": "edge_node3_node1",
             "source": "node3",
             "target": "node1"
+        },
+        {
+            "id": "edge_node2_node3",
+            "source": "node2",
+            "target": "node3"
         }
     ]
 }

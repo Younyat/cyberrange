@@ -11,28 +11,28 @@ set -euo pipefail
 ###############################################
 
 # URL de autenticación del servicio Keystone
-export OS_AUTH_URL=http://192.168.0.10:5000
+#export OS_AUTH_URL=http://192.168.0.10:5000
 
 # Nombre del proyecto o tenant asociado
-export OS_PROJECT_NAME=admin
+#export OS_PROJECT_NAME=admin
 
 # Dominio del proyecto (por defecto: Default)
-export OS_PROJECT_DOMAIN_NAME=Default
+#export OS_PROJECT_DOMAIN_NAME=Default
 
 # Nombre de usuario administrador
-export OS_USERNAME=admin
+#export OS_USERNAME=admin
 
 # Dominio del usuario (por defecto: Default)
-export OS_USER_DOMAIN_NAME=Default
+#export OS_USER_DOMAIN_NAME=Default
 
 # Contraseña asociada al usuario o credencial
-export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+#export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
 
 # Interfaz de acceso (public, internal o admin)
-export OS_INTERFACE=public
+#export OS_INTERFACE=public
 
 # Versión de la API de identidad (normalmente 3)
-export OS_IDENTITY_API_VERSION=3
+#export OS_IDENTITY_API_VERSION=3
 
 ###############################################
 

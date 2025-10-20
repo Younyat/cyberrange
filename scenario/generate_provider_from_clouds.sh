@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# bash generate_provider_from_clouds.sh 2>&1 | tee nombre_del_log.log
+# bash generate_provider_from_clouds.sh [DIRECTORIO_DESTINO] 2>&1 | tee nombre_del_log.log
 # ======================================================
 # ⚙️ Generador automático de provider.tf para Kolla-OpenStack
 # Compatible con la versión Python de yq
@@ -10,12 +10,19 @@ set -e
 
 KOLLA_CLOUDS="/etc/kolla/clouds.yaml"
 TMP_JSON="/tmp/clouds.json"
-OUTPUT_FILE="provider.tf"
+
+# 📁 Directorio de salida (por defecto: actual)
+OUTDIR="${1:-$(pwd)}"
+OUTPUT_FILE="${OUTDIR}/provider.tf"
+
 CLOUD_NAME="kolla-admin"
 
 echo "==============================================="
 echo "🧩 Generador de provider.tf para Kolla-OpenStack"
 echo "==============================================="
+echo "📂 Directorio destino: $OUTDIR"
+echo "📄 Archivo de salida: $OUTPUT_FILE"
+echo ""
 
 # ------------------------------------------------------
 # 🧱 1. Verificar dependencias
@@ -71,7 +78,7 @@ if [ -z "$AUTH_URL" ] || [ "$AUTH_URL" = "null" ]; then
 fi
 
 # ------------------------------------------------------
-# 🧾 4. Generar provider.tf
+# 🧾 4. Generar provider.tf (en el directorio OUTDIR)
 # ------------------------------------------------------
 cat > "$OUTPUT_FILE" <<EOF
 ##############################################
@@ -100,12 +107,12 @@ provider "openstack" {
 }
 EOF
 
-echo "✅ provider.tf generado correctamente:"
-cat "$OUTPUT_FILE"
-
 echo ""
-echo "✅ Puedes ejecutar ahora:"
+echo "✅ provider.tf generado correctamente en:"
+echo "   $OUTPUT_FILE"
+echo ""
+echo "📘 Puedes ejecutar ahora:"
+echo "   cd $OUTDIR"
 echo "   terraform init"
 echo "   terraform plan"
-echo "  terraform apply -auto-approve -parallelism=4"
-
+echo "   terraform apply -auto-approve -parallelism=4"

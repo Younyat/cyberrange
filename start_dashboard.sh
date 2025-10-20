@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # =============================================
 # 🚀 Iniciar Gunicorn limpiando el puerto antes
+#bash start_dashboard.sh 2>&1 | tee nombre_del_log.log
 # =============================================
 
 PORT=5001

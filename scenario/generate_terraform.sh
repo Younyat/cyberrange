@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
+
+#opcion1 : 
 ###############################################
 #  Configuración de Credenciales de OpenStack
 # =============================================
@@ -9,28 +11,28 @@ set -euo pipefail
 ###############################################
 
 # URL de autenticación del servicio Keystone
-export OS_AUTH_URL=http://192.168.0.10:5000
+# export OS_AUTH_URL=http://192.168.0.10:5000
 
 # Nombre del proyecto o tenant asociado
-export OS_PROJECT_NAME=admin
+# export OS_PROJECT_NAME=admin
 
 # Dominio del proyecto (por defecto: Default)
-export OS_PROJECT_DOMAIN_NAME=Default
+# export OS_PROJECT_DOMAIN_NAME=Default
 
 # Nombre de usuario administrador
-export OS_USERNAME=admin
+# export OS_USERNAME=admin
 
 # Dominio del usuario (por defecto: Default)
-export OS_USER_DOMAIN_NAME=Default
+# export OS_USER_DOMAIN_NAME=Default
 
 # Contraseña asociada al usuario o credencial
-export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+# export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
 
 # Interfaz de acceso (public, internal o admin)
-export OS_INTERFACE=public
+# export OS_INTERFACE=public
 
 # Versión de la API de identidad (normalmente 3)
-export OS_IDENTITY_API_VERSION=3
+# export OS_IDENTITY_API_VERSION=3
 
 ###############################################
 
@@ -69,9 +71,8 @@ else
   echo "Clave SSH ya existe en $KEY_PATH"
 fi
 
-PROVIDER_FILE=$BASE_DIR/tf_out/provider.tf
-
-GEN_PROVIDER_SCRIPT="./generate_provider_from_clouds.sh"
+PROVIDER_FILE="$OUTDIR/provider.tf"
+GEN_PROVIDER_SCRIPT="$BASE_DIR/scenario/generate_provider_from_clouds.sh"
 
 echo "==============================================="
 echo "🚀 Iniciando generador principal de Terraform"
@@ -83,7 +84,7 @@ echo "==============================================="
 if [[ -f "/etc/kolla/clouds.yaml" && -f "$GEN_PROVIDER_SCRIPT" ]]; then
     echo "✅ Detectado clouds.yaml en /etc/kolla y script generador."
     echo "🔧 Ejecutando $GEN_PROVIDER_SCRIPT ..."
-    bash "$GEN_PROVIDER_SCRIPT"
+    bash "$GEN_PROVIDER_SCRIPT" "$OUTDIR"
 else
     echo "⚠️ No se encontró /etc/kolla/clouds.yaml o el script $GEN_PROVIDER_SCRIPT."
     echo "🚫 No se generará provider.tf hasta que existan ambos archivos."
@@ -248,6 +249,7 @@ EOF
     --arg secgroup "$secgroup" \
     --arg sshkey "$sshkey" \
     --arg safe_id "$safe_id" \
+    --arg floating_ip_ref "${safe_id}_floating_ip"\
     '. += [{
       id: $id,
       name: $name,
@@ -259,7 +261,7 @@ EOF
       subnetwork: $subnetwork,
       security_group: $secgroup,
       ssh_key: $sshkey,
-      floating_ip_value: "openstack_networking_floatingip_v2.${safe_id}_fip.address"
+      floating_ip_value: $floating_ip_ref
     }]')
 
 done < <(jq -c '.nodes[]' "$SCENARIO_JSON")  
@@ -279,3 +281,39 @@ terraform plan
 echo "Pausando 30 segundos antes de 'plan'..."
 sleep 30
 terraform apply -auto-approve -parallelism=4
+
+
+
+# === 5. Fusionar terraform_outputs.json con summary.json (IPs reales) ===
+echo "=== 5. Fusionando IPs reales en summary.json ==="
+cd "$OUTDIR"
+
+# Exportar outputs de Terraform (si no existen)
+terraform output -json > terraform_outputs.json
+
+# Crear un archivo temporal para modificaciones
+tmpfile=$(mktemp)
+cp "$OUTDIR/summary.json" "$tmpfile"
+
+# Recorre cada output (por ejemplo, node1__floating_ip)
+for key in $(jq -r 'keys[]' terraform_outputs.json); do
+  ip=$(jq -r ".\"$key\".value" terraform_outputs.json)
+  # limpiar el nombre (node1__floating_ip → node1)
+  safe_id=$(echo "$key" | sed 's/__floating_ip$//')
+
+  echo "   ↳ Actualizando ${safe_id} → ${ip}"
+
+  # Actualiza el campo floating_ip_value en el summary.json
+  jq --arg sid "$safe_id" --arg ip "$ip" \
+    'map(if .id == $sid or .safe_id == $sid then .floating_ip_value = $ip else . end)' \
+    "$tmpfile" > "${tmpfile}.new" && mv "${tmpfile}.new" "$tmpfile"
+done
+
+# Sobrescribe summary.json final
+mv "$tmpfile" "$OUTDIR/summary.json"
+
+# (opcional) eliminar terraform_outputs.json si no lo quieres conservar
+rm -f "$OUTDIR/terraform_outputs.json"
+
+echo "✅ summary.json actualizado con IPs flotantes reales "
+

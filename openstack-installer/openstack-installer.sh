@@ -1,5 +1,5 @@
 #!/bin/bash  bash openstack-installer.sh 2>&1 | tee nombre_del_log.log
-
+# app-cred-app-openrc.sh->http://192.168.0.../identity/application_credentials/create/
 # ============================================================
 # Script completo: Instalación OpenStack + Kolla-Ansible
 # ============================================================
@@ -34,7 +34,18 @@ DISTRO=$(lsb_release -cs)
 echo "deb [arch=$ARCH signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $DISTRO stable" | sudo tee /etc/apt/sources.list.d/docker.list
 
 sudo apt update -y
-sudo snap install terraform --classic
+#sudo snap install terraform --classic
+# Instalar Terraform desde el repositorio oficial de HashiCorp
+if ! command -v terraform >/dev/null 2>&1; then
+  echo "📦 Instalando Terraform desde el repositorio oficial..."
+  curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+  echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+  sudo apt update -y && sudo apt install -y terraform
+else
+  echo "✅ Terraform ya está instalado."
+fi
+
+
 
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 

@@ -27,7 +27,7 @@ Una vez completada la instalación, podrás acceder al **Dashboard web de OpenSt
 ###############################################
 #  Configuración de Credenciales de OpenStack
 # =============================================
-# obtenida del archivo `app-cred-app-openrc.sh`
+# obtenida del archivo `admin-openrc.sh`
 # descargado desde el Dashboard de OpenStack.
 ###############################################
 
@@ -35,7 +35,7 @@ Desde el Dashboard, crea unas **credenciales de aplicación (Application Credent
 Descarga el archivo de credenciales resultante en formato `.sh` y ejecútalo en tu terminal:
 
 ```bash
-(openstack_venv)$ source app-cred-app-openrc.sh
+(openstack_venv)$ source admin-openrc.sh
 ```
 
 ---
@@ -136,7 +136,7 @@ chmod +x start_dashboard.sh
 
 #### PASO 2 — Ejecutar el script
 ```bash
-./start_dashboard.sh
+(openstack_venv)$ bash start_dashboard.sh 2>&1 | tee nombre_del_log.log
 ```
 
 **¿Qué hace este script?**
