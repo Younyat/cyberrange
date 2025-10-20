@@ -93,7 +93,6 @@ resource "openstack_networking_router_v2" "router_privado" {
   external_network_id = openstack_networking_network_v2.red_externa.id
 }
 
-# Interfaz interna (red_privada)
 resource "openstack_networking_router_interface_v2" "router_privado_interface" {
   router_id = openstack_networking_router_v2.router_privado.id
   subnet_id = openstack_networking_subnet_v2.red_privada_subnet.id
@@ -145,14 +144,6 @@ resource "openstack_networking_secgroup_rule_v2" "https_in" {
   protocol          = "tcp"
   port_range_min    = 443
   port_range_max    = 443
-  remote_ip_prefix  = "0.0.0.0/0"
-  security_group_id = openstack_networking_secgroup_v2.security_group_basico.id
-}
-
-# ✅ Salida general (Egress)
-resource "openstack_networking_secgroup_rule_v2" "egress_out" {
-  direction         = "egress"
-  ethertype         = "IPv4"
   remote_ip_prefix  = "0.0.0.0/0"
   security_group_id = openstack_networking_secgroup_v2.security_group_basico.id
 }
