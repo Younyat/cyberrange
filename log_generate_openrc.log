@@ -1,0 +1,1 @@
+scenario/destroy_scenario.sh: line 16: cd: scenario/../tf_out: No such file or directory

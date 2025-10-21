@@ -139,17 +139,31 @@
                 </button>
             </div>
 
-            <div class="bg-gray-700/50 p-4 rounded-xl shadow-lg">
-                <h2 class="text-lg font-bold mb-4 text-gray-200">Integración de Escenario</h2>
-                <button onclick="newScenarioConfirmation()" class="w-full py-3 mb-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg text-white font-bold 
-                    transition-all duration-200 ease-in-out hover:scale-[1.01] hover:shadow-xl">
-                    <i class="fas fa-download mr-2"></i> Crear Escenario (Backend)
-                </button>
-                <button onclick="loadScenario()" class="w-full py-3 bg-indigo-800 hover:bg-indigo-900 rounded-lg text-white font-bold 
-                    transition-all duration-200 ease-in-out hover:scale-[1.01] hover:shadow-xl">
-                    <i class="fas fa-upload mr-2"></i> Cargar Escenario "file"
-                </button>
-            </div>
+         <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg">
+    <h2 class="text-lg font-bold mb-5 text-gray-200 text-center">Integración de Escenario</h2>
+
+    <div class="flex flex-col space-y-4">  <!-- 💡 Espaciado uniforme entre botones -->
+        <button onclick="newScenarioConfirmation()" 
+                class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg text-white font-bold
+                       transition-all duration-200 ease-in-out hover:scale-[1.01] hover:shadow-xl">
+            <i class="fas fa-download mr-2"></i> Crear Escenario 
+        </button>
+
+        <button onclick="loadScenario()" 
+                class="w-full py-3 bg-indigo-800 hover:bg-indigo-900 rounded-lg text-white font-bold
+                       transition-all duration-200 ease-in-out hover:scale-[1.01] hover:shadow-xl">
+            <i class="fas fa-upload mr-2"></i> Cargar Escenario 
+        </button>
+
+        <button onclick="destruirScenarioConfirmation()" 
+                class="w-full py-3 bg-amber-600 hover:bg-amber-700 rounded-lg text-white font-bold
+                       transition-all duration-200 ease-in-out hover:scale-[1.01] hover:shadow-xl
+                       focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
+            <i class="fas fa-exclamation-triangle mr-2"></i> Destruir Escenario
+        </button>
+    </div>
+</div>
+
         </div>
     </div>
 
@@ -176,7 +190,7 @@
     <!-- 🔹 OVERLAY DE BLOQUEO (añadir en el HTML) -->
 <div id="overlay" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
   <div class="text-white text-2xl font-bold animate-pulse">
-    🚀 Desplegando escenario... por favor espera unos minutos.
+    🚀 Desplegando/Destruyendo escenario... por favor espera unos minutos.
   </div>
 </div>
 

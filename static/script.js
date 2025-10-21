@@ -57,6 +57,13 @@ function showClearConfirmation() {
     clearAll
   );
 }
+function destruirScenarioConfirmation() {
+  showConfirmationModal(
+    '¿Destruir el escenario actual?',
+    '⚠️ Esta acción eliminará todos los recursos desplegados. No podrás revertirla.',
+    destruirScenario
+  );
+}
 
 
 function newScenarioConfirmation() {
@@ -492,6 +499,70 @@ function appendToTerminal(message, className = 'text-white') {
     terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
+// =======================
+// 🔥 DESTRUIR ESCENARIO
+// =======================
+async function destruirScenario() {
+  const boton = document.querySelector('button[onclick="destruirScenario()"]');
+  
+  // 🔒 Bloquear botones y mostrar overlay
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach(btn => {
+    btn.disabled = true;
+    btn.classList.add("opacity-50", "cursor-not-allowed");
+  });
+  showOverlay(true);
+
+  // Mensaje inicial
+  showToast('⏳ Destruyendo escenario... esto puede tardar unos segundos.');
+  appendToTerminal('$ ⏳ Iniciando destrucción del escenario...', 'text-yellow-400');
+
+  try {
+    const response = await fetch("http://localhost:5001/api/destroy_scenario", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" }
+    });
+
+    const data = await response.json();
+    console.log("Respuesta del backend:", data);
+
+    // =======================
+    // ✅ Caso de éxito
+    // =======================
+    if (response.ok && data.status === "success") {
+     //  appendToTerminal('$ ✅ Escenario destruido correctamente.', 'text-green-400');
+      if (data.stdout) appendToTerminal(data.stdout, 'text-gray-300');
+      // showToast('✅ Escenario destruido correctamente.');
+    } 
+    // =======================
+    // ⚠️ Caso de error controlado
+    // =======================
+    else {
+      appendToTerminal('$ ⚠️ Error al destruir el escenario.', 'text-orange-400');
+      if (data.stderr) appendToTerminal(data.stderr, 'text-red-300');
+      showToast('⚠️ No se pudo destruir completamente el escenario.');
+    }
+
+  } catch (err) {
+    // =======================
+    // ❌ Error de red / backend
+    // =======================
+    console.error("Error al destruir el escenario:", err);
+    appendToTerminal(`$ ❌ Error al conectar con el backend: ${err}`, 'text-red-400');
+    showToast('❌ Error de conexión con el backend.');
+
+  } finally {
+    // 🔓 Restaurar estado UI
+    buttons.forEach(btn => {
+      btn.disabled = false;
+      btn.classList.remove("opacity-50", "cursor-not-allowed");
+    });
+    showOverlay(false);
+
+    boton.innerText = "Destruir Escenario";
+  }
+}
+
 
 async function loadScenario() {
   showToast('Cargando escenario...');
@@ -500,7 +571,7 @@ async function loadScenario() {
   try {
     const res = await fetch('http://localhost:5001/api/get_scenario/file');
     if (!res.ok) {
-      showToast('Error al cargar');
+      showToast('Escenario No creado');
       return;
     }
     const scenarioData = await res.json();

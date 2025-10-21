@@ -1,0 +1,2524 @@
+2025-10-21 13:53:00,542 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 13:53:00,543 - INFO - ✅ Permisos de ejecución otorgados a /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 13:53:00,555 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 13:53:00,557 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 13:53:00,601 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 13:53:00,770 - INFO - 📤 Salida del script:
+2025-10-21 13:53:00,771 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 13:53:00,772 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:53:00,772 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:53:00,783 - INFO - 📤 Salida del script:
+2025-10-21 13:53:00,785 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 13:53:00,788 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:53:00,788 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:53:00,829 - INFO - 📤 Salida del script:
+2025-10-21 13:53:00,830 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 13:53:00,830 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:53:00,830 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:53:00,868 - INFO - 📤 Salida del script:
+2025-10-21 13:53:00,868 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 13:53:00,868 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:53:00,869 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:54:05,103 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 13:54:05,141 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 13:54:05,155 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 13:54:05,221 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 13:54:05,373 - INFO - 📤 Salida del script:
+2025-10-21 13:54:05,374 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 13:54:05,374 - INFO - 📤 Salida del script:
+2025-10-21 13:54:05,374 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:54:05,374 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 13:54:05,374 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:54:05,374 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:54:05,374 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:54:05,381 - INFO - 📤 Salida del script:
+2025-10-21 13:54:05,381 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 13:54:05,382 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:54:05,382 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:54:05,472 - INFO - 📤 Salida del script:
+2025-10-21 13:54:05,472 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 13:54:05,472 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 13:54:05,472 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:16:18,226 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 14:16:18,286 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 14:16:18,388 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 14:16:18,402 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 14:16:18,468 - INFO - 📤 Salida del script:
+2025-10-21 14:16:18,468 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+❌ Error: No se pudo leer la configuración del cloud 'kolla-admin' en /etc/kolla/clouds.yaml.
+
+2025-10-21 14:16:18,469 - WARNING - ⚠️ No se generó correctamente /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh. Código de salida: 1
+2025-10-21 14:16:18,469 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:16:18,533 - INFO - 📤 Salida del script:
+2025-10-21 14:16:18,533 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 14:16:18,534 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:16:18,534 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:16:18,651 - INFO - 📤 Salida del script:
+2025-10-21 14:16:18,651 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 14:16:18,652 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:16:18,652 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:16:18,666 - INFO - 📤 Salida del script:
+2025-10-21 14:16:18,667 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 14:16:18,667 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:16:18,667 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:31:59,789 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 14:31:59,867 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 14:31:59,884 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 14:31:59,914 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 14:32:00,063 - INFO - 📤 Salida del script:
+2025-10-21 14:32:00,063 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 14:32:00,065 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:32:00,065 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:32:00,121 - INFO - 📤 Salida del script:
+2025-10-21 14:32:00,122 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 14:32:00,122 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:32:00,123 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:32:00,137 - INFO - 📤 Salida del script:
+2025-10-21 14:32:00,138 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 14:32:00,138 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:32:00,139 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:32:00,162 - INFO - 📤 Salida del script:
+2025-10-21 14:32:00,162 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 14:32:00,163 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:32:00,164 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 14:44:19,799 - INFO - ✅ Permisos de ejecución corregidos para /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 14:44:19,800 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 14:44:19,809 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+⚠️  No se encontró el directorio tf_out.
+➡️  No hay recursos Terraform que destruir. Saliendo sin error.
+➡️  El escenario aún no ha sido creado.
+2025-10-21 14:50:22,662 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 14:50:22,670 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+⚠️  No se encontró el directorio tf_out.
+➡️  No hay recursos Terraform que destruir. Saliendo sin error.
+➡️  El escenario aún no ha sido creado.
+2025-10-21 14:53:18,043 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 14:53:18,052 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+⚠️  No se encontró el directorio tf_out.
+➡️  No hay recursos Terraform que destruir. Saliendo sin error.
+➡️  El escenario aún no ha sido creado.
+2025-10-21 15:01:29,298 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 15:01:29,306 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+⚠️  No se encontró el directorio tf_out.
+➡️  No hay recursos Terraform que destruir. Saliendo sin error.
+➡️  El escenario aún no ha sido creado.
+2025-10-21 15:01:42,729 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 15:01:42,737 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+⚠️  No se encontró el directorio tf_out.
+➡️  No hay recursos Terraform que destruir. Saliendo sin error.
+➡️  El escenario aún no ha sido creado.
+2025-10-21 15:36:44,640 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 15:36:44,647 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+⚠️  No se encontró el directorio tf_out.
+➡️  No hay recursos Terraform que destruir. Saliendo sin error.
+➡️  El escenario aún no ha sido creado.
+2025-10-21 15:40:32,731 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 15:40:32,738 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+⚠️  No se encontró el directorio tf_out.
+➡️  No hay recursos Terraform que destruir. Saliendo sin error.
+➡️  El escenario aún no ha sido creado.
+2025-10-21 15:41:32,820 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:41:32,888 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:41:32,890 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:41:32,937 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:41:33,074 - INFO - 📤 Salida del script:
+2025-10-21 15:41:33,075 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 15:41:33,077 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:41:33,078 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:41:33,118 - INFO - 📤 Salida del script:
+2025-10-21 15:41:33,118 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 15:41:33,120 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:41:33,121 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:41:33,122 - INFO - 📤 Salida del script:
+2025-10-21 15:41:33,123 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 15:41:33,124 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:41:33,125 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:41:33,178 - INFO - 📤 Salida del script:
+2025-10-21 15:41:33,178 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 15:41:33,178 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:41:33,179 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:41:40,841 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 15:41:40,849 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+⚠️  No se encontró el directorio tf_out.
+➡️  No hay recursos Terraform que destruir. Saliendo sin error.
+➡️  El escenario aún no ha sido creado.
+2025-10-21 15:45:39,606 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 15:45:40,082 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+🚀 Ejecutando 'terraform destroy'...
+
+[0m[1m[32mNo changes.[0m[1m No objects need to be destroyed.[0m
+
+[0mEither you have not created any objects yet or the existing objects were
+already deleted outside of Terraform.
+[0m[1m[32m
+Destroy complete! Resources: 0 destroyed.
+[0m✅ Recursos Terraform destruidos correctamente.
+🧹 Eliminando archivos temporales...
+🗑️  Eliminando carpeta tf_out completa...
+✨ Carpeta tf_out eliminada con éxito. Entorno restaurado.
+2025-10-21 15:51:11,549 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:51:11,618 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:51:11,689 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:51:11,766 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:51:11,806 - INFO - 📤 Salida del script:
+2025-10-21 15:51:11,807 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 15:51:11,807 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:51:11,808 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:51:11,851 - INFO - 📤 Salida del script:
+2025-10-21 15:51:11,852 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+❌ Error: No se pudo leer la configuración del cloud 'kolla-admin' en /etc/kolla/clouds.yaml.
+
+2025-10-21 15:51:11,853 - WARNING - ⚠️ No se generó correctamente /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh. Código de salida: 1
+2025-10-21 15:51:11,854 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:51:11,920 - INFO - 📤 Salida del script:
+2025-10-21 15:51:11,921 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 15:51:11,924 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:51:11,925 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:51:12,043 - INFO - 📤 Salida del script:
+2025-10-21 15:51:12,044 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 15:51:12,046 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:51:12,046 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:57:00,863 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:57:00,882 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:57:00,953 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:57:01,000 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-21 15:57:01,097 - INFO - 📤 Salida del script:
+2025-10-21 15:57:01,097 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 15:57:01,098 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:57:01,098 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:57:01,107 - INFO - 📤 Salida del script:
+2025-10-21 15:57:01,107 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 15:57:01,107 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:57:01,108 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:57:01,190 - INFO - 📤 Salida del script:
+2025-10-21 15:57:01,191 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 15:57:01,193 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:57:01,194 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:57:01,260 - INFO - 📤 Salida del script:
+2025-10-21 15:57:01,261 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-21 15:57:01,261 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:57:01,261 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-21 15:58:03,159 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 15:58:30,026 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+🚀 Ejecutando 'terraform destroy'...
+[0m[1mdata.openstack_images_image_v2.node2__image: Reading...[0m[0m
+[0m[1mdata.openstack_networking_secgroup_v2.node2__secgroup: Reading...[0m[0m
+[0m[1mdata.openstack_compute_flavor_v2.node1__flavor: Reading...[0m[0m
+[0m[1mdata.openstack_images_image_v2.node1__image: Reading...[0m[0m
+[0m[1mdata.openstack_compute_flavor_v2.node1__flavor: Read complete after 0s [id=32d88d49-0357-4e4f-9940-9789acc9d044][0m
+[0m[1mdata.openstack_networking_secgroup_v2.node2__secgroup: Read complete after 0s [id=3ab85c46-373b-4163-a5d7-915aa846adf9][0m
+[0m[1mdata.openstack_networking_network_v2.node2__network: Reading...[0m[0m
+[0m[1mdata.openstack_compute_flavor_v2.node2__flavor: Reading...[0m[0m
+[0m[1mdata.openstack_images_image_v2.node2__image: Read complete after 0s [id=ef504cf3-7878-4b9a-9e71-7b34de8b1fb9][0m
+[0m[1mdata.openstack_compute_flavor_v2.node3__flavor: Reading...[0m[0m
+[0m[1mdata.openstack_images_image_v2.node1__image: Read complete after 0s [id=7cbe16a7-472b-4477-afd5-bafcfbf99a6a][0m
+[0m[1mdata.openstack_images_image_v2.node3__image: Reading...[0m[0m
+[0m[1mdata.openstack_compute_flavor_v2.node2__flavor: Read complete after 0s [id=50d634a4-6b06-4124-8358-6b63c53216a5][0m
+[0m[1mopenstack_compute_keypair_v2.node1__keypair: Refreshing state... [id=nueva_clave_wazuh_node1_][0m
+[0m[1mdata.openstack_images_image_v2.node3__image: Read complete after 0s [id=ef504cf3-7878-4b9a-9e71-7b34de8b1fb9][0m
+[0m[1mopenstack_networking_floatingip_v2.node2__fip: Refreshing state... [id=c5e3a886-4014-4da7-a08f-aa64429c2d54][0m
+[0m[1mdata.openstack_networking_network_v2.node2__network: Read complete after 0s [id=0bb554c2-9a9f-4533-a765-519fe237a20f][0m
+[0m[1mopenstack_networking_floatingip_v2.node1__fip: Refreshing state... [id=09e0732b-967f-4820-a6c8-59228bc9bbea][0m
+[0m[1mopenstack_compute_keypair_v2.node3__keypair: Refreshing state... [id=nueva_clave_wazuh_node3_][0m
+[0m[1mdata.openstack_compute_flavor_v2.node3__flavor: Read complete after 0s [id=50d634a4-6b06-4124-8358-6b63c53216a5][0m
+[0m[1mopenstack_compute_keypair_v2.node2__keypair: Refreshing state... [id=nueva_clave_wazuh_node2_][0m
+[0m[1mopenstack_networking_floatingip_v2.node3__fip: Refreshing state... [id=f01c1c36-b264-4e91-9f13-caa0819698d1][0m
+[0m[1mdata.openstack_networking_secgroup_v2.node3__secgroup: Reading...[0m[0m
+[0m[1mdata.openstack_networking_network_v2.node1__network: Reading...[0m[0m
+[0m[1mdata.openstack_networking_secgroup_v2.node3__secgroup: Read complete after 0s [id=3ab85c46-373b-4163-a5d7-915aa846adf9][0m
+[0m[1mdata.openstack_networking_secgroup_v2.node1__secgroup: Reading...[0m[0m
+[0m[1mdata.openstack_networking_network_v2.node3__network: Reading...[0m[0m
+[0m[1mdata.openstack_networking_subnet_v2.node2__subnet: Reading...[0m[0m
+[0m[1mdata.openstack_networking_secgroup_v2.node1__secgroup: Read complete after 0s [id=3ab85c46-373b-4163-a5d7-915aa846adf9][0m
+[0m[1mdata.openstack_networking_network_v2.node1__network: Read complete after 0s [id=0bb554c2-9a9f-4533-a765-519fe237a20f][0m
+[0m[1mdata.openstack_networking_subnet_v2.node1__subnet: Reading...[0m[0m
+[0m[1mdata.openstack_networking_subnet_v2.node2__subnet: Read complete after 0s [id=9a46e7ed-e614-41a1-ba87-6166eb344a05][0m
+[0m[1mopenstack_networking_port_v2.node2__port: Refreshing state... [id=8c8aad32-15b3-47a9-bd7f-d0c222bb9191][0m
+[0m[1mdata.openstack_networking_subnet_v2.node1__subnet: Read complete after 0s [id=9a46e7ed-e614-41a1-ba87-6166eb344a05][0m
+[0m[1mopenstack_networking_port_v2.node1__port: Refreshing state... [id=fbf84780-cbfb-42ba-92f5-28268dafa632][0m
+[0m[1mdata.openstack_networking_network_v2.node3__network: Read complete after 0s [id=0bb554c2-9a9f-4533-a765-519fe237a20f][0m
+[0m[1mdata.openstack_networking_subnet_v2.node3__subnet: Reading...[0m[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node2__fip_associate: Refreshing state... [id=c5e3a886-4014-4da7-a08f-aa64429c2d54][0m
+[0m[1mopenstack_compute_instance_v2.node2__instance: Refreshing state... [id=823713b7-5c80-4b49-a256-9ad4ac56eedf][0m
+[0m[1mopenstack_compute_instance_v2.node1__instance: Refreshing state... [id=6ee335eb-e273-4f3c-ad65-b5f6de9c7842][0m
+[0m[1mdata.openstack_networking_subnet_v2.node3__subnet: Read complete after 0s [id=9a46e7ed-e614-41a1-ba87-6166eb344a05][0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node1__fip_associate: Refreshing state... [id=09e0732b-967f-4820-a6c8-59228bc9bbea][0m
+[0m[1mopenstack_networking_port_v2.node3__port: Refreshing state... [id=c164dc5f-920e-4b68-8210-772d27c412d0][0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node3__fip_associate: Refreshing state... [id=f01c1c36-b264-4e91-9f13-caa0819698d1][0m
+[0m[1mopenstack_compute_instance_v2.node3__instance: Refreshing state... [id=c46e2c20-32b3-4b62-b5c7-027e824ae8e8][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy[0m
+
+Terraform will perform the following actions:
+
+[1m  # openstack_compute_instance_v2.node1__instance[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_instance_v2" "node1__instance" {
+      [31m-[0m[0m access_ip_v4        = "192.168.100.195" [90m-> null[0m[0m
+      [31m-[0m[0m all_metadata        = {} [90m-> null[0m[0m
+      [31m-[0m[0m all_tags            = [] [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone   = "nova" [90m-> null[0m[0m
+      [31m-[0m[0m created             = "2025-10-21 13:48:15 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_id           = "32d88d49-0357-4e4f-9940-9789acc9d044" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_name         = "large" [90m-> null[0m[0m
+      [31m-[0m[0m force_delete        = false [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "6ee335eb-e273-4f3c-ad65-b5f6de9c7842" [90m-> null[0m[0m
+      [31m-[0m[0m image_id            = "7cbe16a7-472b-4477-afd5-bafcfbf99a6a" [90m-> null[0m[0m
+      [31m-[0m[0m image_name          = "Ubuntu22.04" [90m-> null[0m[0m
+      [31m-[0m[0m key_pair            = "nueva_clave_wazuh_node1_" [90m-> null[0m[0m
+      [31m-[0m[0m name                = "monitor 1" [90m-> null[0m[0m
+      [31m-[0m[0m power_state         = "active" [90m-> null[0m[0m
+      [31m-[0m[0m region              = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_groups     = [
+          [31m-[0m[0m "sg_wazuh_suricata",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m stop_before_destroy = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                = [] [90m-> null[0m[0m
+      [31m-[0m[0m updated             = "2025-10-21 13:48:37 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m user_data           = "04517731785ee2caf6e3895e58fae9d18fc16cda" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+
+      [31m-[0m[0m network {
+          [31m-[0m[0m access_network = false [90m-> null[0m[0m
+          [31m-[0m[0m fixed_ip_v4    = "192.168.100.195" [90m-> null[0m[0m
+          [31m-[0m[0m mac            = "fa:16:3e:23:7e:a4" [90m-> null[0m[0m
+          [31m-[0m[0m name           = "red_privada" [90m-> null[0m[0m
+          [31m-[0m[0m port           = "fbf84780-cbfb-42ba-92f5-28268dafa632" [90m-> null[0m[0m
+          [31m-[0m[0m uuid           = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+    }
+
+[1m  # openstack_compute_instance_v2.node2__instance[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_instance_v2" "node2__instance" {
+      [31m-[0m[0m access_ip_v4        = "192.168.100.212" [90m-> null[0m[0m
+      [31m-[0m[0m all_metadata        = {} [90m-> null[0m[0m
+      [31m-[0m[0m all_tags            = [] [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone   = "nova" [90m-> null[0m[0m
+      [31m-[0m[0m created             = "2025-10-21 13:48:09 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_id           = "50d634a4-6b06-4124-8358-6b63c53216a5" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_name         = "medium" [90m-> null[0m[0m
+      [31m-[0m[0m force_delete        = false [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "823713b7-5c80-4b49-a256-9ad4ac56eedf" [90m-> null[0m[0m
+      [31m-[0m[0m image_id            = "ef504cf3-7878-4b9a-9e71-7b34de8b1fb9" [90m-> null[0m[0m
+      [31m-[0m[0m image_name          = "debian-12" [90m-> null[0m[0m
+      [31m-[0m[0m key_pair            = "nueva_clave_wazuh_node2_" [90m-> null[0m[0m
+      [31m-[0m[0m name                = "attack 2" [90m-> null[0m[0m
+      [31m-[0m[0m power_state         = "active" [90m-> null[0m[0m
+      [31m-[0m[0m region              = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_groups     = [
+          [31m-[0m[0m "sg_wazuh_suricata",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m stop_before_destroy = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                = [] [90m-> null[0m[0m
+      [31m-[0m[0m updated             = "2025-10-21 13:48:50 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m user_data           = "d957ca0afd4e07ac99fc58b87fc49732c10b42cc" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+
+      [31m-[0m[0m network {
+          [31m-[0m[0m access_network = false [90m-> null[0m[0m
+          [31m-[0m[0m fixed_ip_v4    = "192.168.100.212" [90m-> null[0m[0m
+          [31m-[0m[0m mac            = "fa:16:3e:6b:50:a1" [90m-> null[0m[0m
+          [31m-[0m[0m name           = "red_privada" [90m-> null[0m[0m
+          [31m-[0m[0m port           = "8c8aad32-15b3-47a9-bd7f-d0c222bb9191" [90m-> null[0m[0m
+          [31m-[0m[0m uuid           = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+    }
+
+[1m  # openstack_compute_instance_v2.node3__instance[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_instance_v2" "node3__instance" {
+      [31m-[0m[0m access_ip_v4        = "192.168.100.246" [90m-> null[0m[0m
+      [31m-[0m[0m all_metadata        = {} [90m-> null[0m[0m
+      [31m-[0m[0m all_tags            = [] [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone   = "nova" [90m-> null[0m[0m
+      [31m-[0m[0m created             = "2025-10-21 13:48:14 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_id           = "50d634a4-6b06-4124-8358-6b63c53216a5" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_name         = "medium" [90m-> null[0m[0m
+      [31m-[0m[0m force_delete        = false [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "c46e2c20-32b3-4b62-b5c7-027e824ae8e8" [90m-> null[0m[0m
+      [31m-[0m[0m image_id            = "ef504cf3-7878-4b9a-9e71-7b34de8b1fb9" [90m-> null[0m[0m
+      [31m-[0m[0m image_name          = "debian-12" [90m-> null[0m[0m
+      [31m-[0m[0m key_pair            = "nueva_clave_wazuh_node3_" [90m-> null[0m[0m
+      [31m-[0m[0m name                = "victim 3" [90m-> null[0m[0m
+      [31m-[0m[0m power_state         = "active" [90m-> null[0m[0m
+      [31m-[0m[0m region              = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_groups     = [
+          [31m-[0m[0m "sg_wazuh_suricata",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m stop_before_destroy = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                = [] [90m-> null[0m[0m
+      [31m-[0m[0m updated             = "2025-10-21 13:48:48 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m user_data           = "d957ca0afd4e07ac99fc58b87fc49732c10b42cc" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+
+      [31m-[0m[0m network {
+          [31m-[0m[0m access_network = false [90m-> null[0m[0m
+          [31m-[0m[0m fixed_ip_v4    = "192.168.100.246" [90m-> null[0m[0m
+          [31m-[0m[0m mac            = "fa:16:3e:4d:76:a9" [90m-> null[0m[0m
+          [31m-[0m[0m name           = "red_privada" [90m-> null[0m[0m
+          [31m-[0m[0m port           = "c164dc5f-920e-4b68-8210-772d27c412d0" [90m-> null[0m[0m
+          [31m-[0m[0m uuid           = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+    }
+
+[1m  # openstack_compute_keypair_v2.node1__keypair[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_keypair_v2" "node1__keypair" {
+      [31m-[0m[0m fingerprint = "8e:b2:5c:9e:f8:1d:31:45:c3:17:3b:1d:0b:4e:0d:21" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "nueva_clave_wazuh_node1_" [90m-> null[0m[0m
+      [31m-[0m[0m name        = "nueva_clave_wazuh_node1_" [90m-> null[0m[0m
+      [31m-[0m[0m public_key  = <<-EOT
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCssU2Q/OO5uMAc77uk4T12jyfdZiH/1Y9touL0zvHDu1ZX5wXVC2Ga2NUB+Qf4PDexQhmuanRdNAaqncS4/pnMs3TrIpHkl4eNCHkErt29AYbvMTE4Na3HQNre3KVB2TA7WOo+Luu7wpnHIoRsrYIuAIYV3+uYiffMJy7NT1Z8G2VxFj5It6Rx+bcqY+VoeP7uwPtc+cnVa9jqTImMuF7oslqfCme0BQWJI2xGJvJZZHW3J0OACwtFJBWWCmU4dzlht8LlcXLSesi+/atO32259oJtoPDt2vDZJWNkkCRK2CAz3VLNcMzu4LsN7OuWGoXratlSsjeeXEtlWD5mDjIPaOP3xB1qg2Tm9itEIQW7I7SfKXSD9gUgtfPMoFl65VqZgjPdUUT4DFQekbF8VLbivXW7y8xcsY+VYeqk2pvmeNmedRYgCOWSR/izfFgel849MaImxIG+D6Fck80NSDW6NvpDlsllf4U7On/Ml1dvx7aHQ1yhM8m31hjdlStMcZYYyTovFWDm4/PoW0/KLsvVAcZIhk89zstVigbBAk7APbNtTHq5jgVa2mXdDLb1Wx6cGtj4KGdmv5VJeiQVTeH0+iRfZ8e8axjQWZESMIiRo3hLBsFDt5PV/OPNwXlvbfdinwRUSZyHu/88jEbIeig64ZiwqF2dDzbI8iUetdwkvw== younes@nics-lab-VMware20-1
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_compute_keypair_v2.node2__keypair[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_keypair_v2" "node2__keypair" {
+      [31m-[0m[0m fingerprint = "8e:b2:5c:9e:f8:1d:31:45:c3:17:3b:1d:0b:4e:0d:21" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "nueva_clave_wazuh_node2_" [90m-> null[0m[0m
+      [31m-[0m[0m name        = "nueva_clave_wazuh_node2_" [90m-> null[0m[0m
+      [31m-[0m[0m public_key  = <<-EOT
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCssU2Q/OO5uMAc77uk4T12jyfdZiH/1Y9touL0zvHDu1ZX5wXVC2Ga2NUB+Qf4PDexQhmuanRdNAaqncS4/pnMs3TrIpHkl4eNCHkErt29AYbvMTE4Na3HQNre3KVB2TA7WOo+Luu7wpnHIoRsrYIuAIYV3+uYiffMJy7NT1Z8G2VxFj5It6Rx+bcqY+VoeP7uwPtc+cnVa9jqTImMuF7oslqfCme0BQWJI2xGJvJZZHW3J0OACwtFJBWWCmU4dzlht8LlcXLSesi+/atO32259oJtoPDt2vDZJWNkkCRK2CAz3VLNcMzu4LsN7OuWGoXratlSsjeeXEtlWD5mDjIPaOP3xB1qg2Tm9itEIQW7I7SfKXSD9gUgtfPMoFl65VqZgjPdUUT4DFQekbF8VLbivXW7y8xcsY+VYeqk2pvmeNmedRYgCOWSR/izfFgel849MaImxIG+D6Fck80NSDW6NvpDlsllf4U7On/Ml1dvx7aHQ1yhM8m31hjdlStMcZYYyTovFWDm4/PoW0/KLsvVAcZIhk89zstVigbBAk7APbNtTHq5jgVa2mXdDLb1Wx6cGtj4KGdmv5VJeiQVTeH0+iRfZ8e8axjQWZESMIiRo3hLBsFDt5PV/OPNwXlvbfdinwRUSZyHu/88jEbIeig64ZiwqF2dDzbI8iUetdwkvw== younes@nics-lab-VMware20-1
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_compute_keypair_v2.node3__keypair[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_keypair_v2" "node3__keypair" {
+      [31m-[0m[0m fingerprint = "8e:b2:5c:9e:f8:1d:31:45:c3:17:3b:1d:0b:4e:0d:21" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "nueva_clave_wazuh_node3_" [90m-> null[0m[0m
+      [31m-[0m[0m name        = "nueva_clave_wazuh_node3_" [90m-> null[0m[0m
+      [31m-[0m[0m public_key  = <<-EOT
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCssU2Q/OO5uMAc77uk4T12jyfdZiH/1Y9touL0zvHDu1ZX5wXVC2Ga2NUB+Qf4PDexQhmuanRdNAaqncS4/pnMs3TrIpHkl4eNCHkErt29AYbvMTE4Na3HQNre3KVB2TA7WOo+Luu7wpnHIoRsrYIuAIYV3+uYiffMJy7NT1Z8G2VxFj5It6Rx+bcqY+VoeP7uwPtc+cnVa9jqTImMuF7oslqfCme0BQWJI2xGJvJZZHW3J0OACwtFJBWWCmU4dzlht8LlcXLSesi+/atO32259oJtoPDt2vDZJWNkkCRK2CAz3VLNcMzu4LsN7OuWGoXratlSsjeeXEtlWD5mDjIPaOP3xB1qg2Tm9itEIQW7I7SfKXSD9gUgtfPMoFl65VqZgjPdUUT4DFQekbF8VLbivXW7y8xcsY+VYeqk2pvmeNmedRYgCOWSR/izfFgel849MaImxIG+D6Fck80NSDW6NvpDlsllf4U7On/Ml1dvx7aHQ1yhM8m31hjdlStMcZYYyTovFWDm4/PoW0/KLsvVAcZIhk89zstVigbBAk7APbNtTHq5jgVa2mXdDLb1Wx6cGtj4KGdmv5VJeiQVTeH0+iRfZ8e8axjQWZESMIiRo3hLBsFDt5PV/OPNwXlvbfdinwRUSZyHu/88jEbIeig64ZiwqF2dDzbI8iUetdwkvw== younes@nics-lab-VMware20-1
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_associate_v2.node1__fip_associate[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_associate_v2" "node1__fip_associate" {
+      [31m-[0m[0m fixed_ip    = "192.168.100.195" [90m-> null[0m[0m
+      [31m-[0m[0m floating_ip = "10.0.2.61" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "09e0732b-967f-4820-a6c8-59228bc9bbea" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "fbf84780-cbfb-42ba-92f5-28268dafa632" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_associate_v2.node2__fip_associate[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_associate_v2" "node2__fip_associate" {
+      [31m-[0m[0m fixed_ip    = "192.168.100.212" [90m-> null[0m[0m
+      [31m-[0m[0m floating_ip = "10.0.2.204" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "c5e3a886-4014-4da7-a08f-aa64429c2d54" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "8c8aad32-15b3-47a9-bd7f-d0c222bb9191" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_associate_v2.node3__fip_associate[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_associate_v2" "node3__fip_associate" {
+      [31m-[0m[0m fixed_ip    = "192.168.100.246" [90m-> null[0m[0m
+      [31m-[0m[0m floating_ip = "10.0.2.37" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "f01c1c36-b264-4e91-9f13-caa0819698d1" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "c164dc5f-920e-4b68-8210-772d27c412d0" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_v2.node1__fip[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_v2" "node1__fip" {
+      [31m-[0m[0m address     = "10.0.2.61" [90m-> null[0m[0m
+      [31m-[0m[0m all_tags    = [] [90m-> null[0m[0m
+      [31m-[0m[0m fixed_ip    = "192.168.100.195" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "09e0732b-967f-4820-a6c8-59228bc9bbea" [90m-> null[0m[0m
+      [31m-[0m[0m pool        = "red_externa" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "fbf84780-cbfb-42ba-92f5-28268dafa632" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m tags        = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id   = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_v2.node2__fip[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_v2" "node2__fip" {
+      [31m-[0m[0m address     = "10.0.2.204" [90m-> null[0m[0m
+      [31m-[0m[0m all_tags    = [] [90m-> null[0m[0m
+      [31m-[0m[0m fixed_ip    = "192.168.100.212" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "c5e3a886-4014-4da7-a08f-aa64429c2d54" [90m-> null[0m[0m
+      [31m-[0m[0m pool        = "red_externa" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "8c8aad32-15b3-47a9-bd7f-d0c222bb9191" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m tags        = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id   = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_v2.node3__fip[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_v2" "node3__fip" {
+      [31m-[0m[0m address     = "10.0.2.37" [90m-> null[0m[0m
+      [31m-[0m[0m all_tags    = [] [90m-> null[0m[0m
+      [31m-[0m[0m fixed_ip    = "192.168.100.246" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "f01c1c36-b264-4e91-9f13-caa0819698d1" [90m-> null[0m[0m
+      [31m-[0m[0m pool        = "red_externa" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "c164dc5f-920e-4b68-8210-772d27c412d0" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m tags        = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id   = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_networking_port_v2.node1__port[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_port_v2" "node1__port" {
+      [31m-[0m[0m admin_state_up         = true [90m-> null[0m[0m
+      [31m-[0m[0m all_fixed_ips          = [
+          [31m-[0m[0m "192.168.100.195",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_security_group_ids = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_tags               = [] [90m-> null[0m[0m
+      [31m-[0m[0m device_id              = "6ee335eb-e273-4f3c-ad65-b5f6de9c7842" [90m-> null[0m[0m
+      [31m-[0m[0m device_owner           = "compute:nova" [90m-> null[0m[0m
+      [31m-[0m[0m dns_assignment         = [] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "fbf84780-cbfb-42ba-92f5-28268dafa632" [90m-> null[0m[0m
+      [31m-[0m[0m mac_address            = "fa:16:3e:23:7e:a4" [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "node1_-port" [90m-> null[0m[0m
+      [31m-[0m[0m network_id             = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+      [31m-[0m[0m port_security_enabled  = true [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_ids     = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id              = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m binding {
+          [31m-[0m[0m host_id     = "nics-lab-VMware20-1" [90m-> null[0m[0m
+          [31m-[0m[0m profile     = jsonencode({})
+          [31m-[0m[0m vif_details = {
+              [31m-[0m[0m "bound_drivers"   = jsonencode(
+                    {
+                      [31m-[0m[0m "0" = "openvswitch"
+                    }
+                )
+              [31m-[0m[0m "bridge_name"     = "br-int"
+              [31m-[0m[0m "connectivity"    = "l2"
+              [31m-[0m[0m "datapath_type"   = "system"
+              [31m-[0m[0m "ovs_hybrid_plug" = "true"
+              [31m-[0m[0m "port_filter"     = "true"
+            } [90m-> null[0m[0m
+          [31m-[0m[0m vif_type    = "ovs" [90m-> null[0m[0m
+          [31m-[0m[0m vnic_type   = "normal" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m fixed_ip {
+          [31m-[0m[0m subnet_id  = "9a46e7ed-e614-41a1-ba87-6166eb344a05" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+    }
+
+[1m  # openstack_networking_port_v2.node2__port[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_port_v2" "node2__port" {
+      [31m-[0m[0m admin_state_up         = true [90m-> null[0m[0m
+      [31m-[0m[0m all_fixed_ips          = [
+          [31m-[0m[0m "192.168.100.212",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_security_group_ids = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_tags               = [] [90m-> null[0m[0m
+      [31m-[0m[0m device_id              = "823713b7-5c80-4b49-a256-9ad4ac56eedf" [90m-> null[0m[0m
+      [31m-[0m[0m device_owner           = "compute:nova" [90m-> null[0m[0m
+      [31m-[0m[0m dns_assignment         = [] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "8c8aad32-15b3-47a9-bd7f-d0c222bb9191" [90m-> null[0m[0m
+      [31m-[0m[0m mac_address            = "fa:16:3e:6b:50:a1" [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "node2_-port" [90m-> null[0m[0m
+      [31m-[0m[0m network_id             = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+      [31m-[0m[0m port_security_enabled  = true [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_ids     = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id              = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m binding {
+          [31m-[0m[0m host_id     = "nics-lab-VMware20-1" [90m-> null[0m[0m
+          [31m-[0m[0m profile     = jsonencode({})
+          [31m-[0m[0m vif_details = {
+              [31m-[0m[0m "bound_drivers"   = jsonencode(
+                    {
+                      [31m-[0m[0m "0" = "openvswitch"
+                    }
+                )
+              [31m-[0m[0m "bridge_name"     = "br-int"
+              [31m-[0m[0m "connectivity"    = "l2"
+              [31m-[0m[0m "datapath_type"   = "system"
+              [31m-[0m[0m "ovs_hybrid_plug" = "true"
+              [31m-[0m[0m "port_filter"     = "true"
+            } [90m-> null[0m[0m
+          [31m-[0m[0m vif_type    = "ovs" [90m-> null[0m[0m
+          [31m-[0m[0m vnic_type   = "normal" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m fixed_ip {
+          [31m-[0m[0m subnet_id  = "9a46e7ed-e614-41a1-ba87-6166eb344a05" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+    }
+
+[1m  # openstack_networking_port_v2.node3__port[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_port_v2" "node3__port" {
+      [31m-[0m[0m admin_state_up         = true [90m-> null[0m[0m
+      [31m-[0m[0m all_fixed_ips          = [
+          [31m-[0m[0m "192.168.100.246",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_security_group_ids = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_tags               = [] [90m-> null[0m[0m
+      [31m-[0m[0m device_id              = "c46e2c20-32b3-4b62-b5c7-027e824ae8e8" [90m-> null[0m[0m
+      [31m-[0m[0m device_owner           = "compute:nova" [90m-> null[0m[0m
+      [31m-[0m[0m dns_assignment         = [] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "c164dc5f-920e-4b68-8210-772d27c412d0" [90m-> null[0m[0m
+      [31m-[0m[0m mac_address            = "fa:16:3e:4d:76:a9" [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "node3_-port" [90m-> null[0m[0m
+      [31m-[0m[0m network_id             = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+      [31m-[0m[0m port_security_enabled  = true [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_ids     = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id              = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m binding {
+          [31m-[0m[0m host_id     = "nics-lab-VMware20-1" [90m-> null[0m[0m
+          [31m-[0m[0m profile     = jsonencode({})
+          [31m-[0m[0m vif_details = {
+              [31m-[0m[0m "bound_drivers"   = jsonencode(
+                    {
+                      [31m-[0m[0m "0" = "openvswitch"
+                    }
+                )
+              [31m-[0m[0m "bridge_name"     = "br-int"
+              [31m-[0m[0m "connectivity"    = "l2"
+              [31m-[0m[0m "datapath_type"   = "system"
+              [31m-[0m[0m "ovs_hybrid_plug" = "true"
+              [31m-[0m[0m "port_filter"     = "true"
+            } [90m-> null[0m[0m
+          [31m-[0m[0m vif_type    = "ovs" [90m-> null[0m[0m
+          [31m-[0m[0m vnic_type   = "normal" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m fixed_ip {
+          [31m-[0m[0m subnet_id  = "9a46e7ed-e614-41a1-ba87-6166eb344a05" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+    }
+
+[1mPlan:[0m 0 to add, 0 to change, 15 to destroy.
+[0m
+Changes to Outputs:
+  [31m-[0m[0m node1__floating_ip = "10.0.2.61" [90m-> null[0m[0m
+  [31m-[0m[0m node2__floating_ip = "10.0.2.204" [90m-> null[0m[0m
+  [31m-[0m[0m node3__floating_ip = "10.0.2.37" [90m-> null[0m[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node2__fip_associate: Destroying... [id=c5e3a886-4014-4da7-a08f-aa64429c2d54][0m[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node3__fip_associate: Destroying... [id=f01c1c36-b264-4e91-9f13-caa0819698d1][0m[0m
+[0m[1mopenstack_compute_instance_v2.node1__instance: Destroying... [id=6ee335eb-e273-4f3c-ad65-b5f6de9c7842][0m[0m
+[0m[1mopenstack_compute_instance_v2.node3__instance: Destroying... [id=c46e2c20-32b3-4b62-b5c7-027e824ae8e8][0m[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node2__fip_associate: Destruction complete after 1s[0m
+[0m[1mopenstack_compute_instance_v2.node2__instance: Destroying... [id=823713b7-5c80-4b49-a256-9ad4ac56eedf][0m[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node3__fip_associate: Destruction complete after 1s[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node1__fip_associate: Destroying... [id=09e0732b-967f-4820-a6c8-59228bc9bbea][0m[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node1__fip_associate: Destruction complete after 1s[0m
+[0m[1mopenstack_compute_instance_v2.node3__instance: Still destroying... [id=c46e2c20-32b3-4b62-b5c7-027e824ae8e8, 00m14s elapsed][0m[0m
+[0m[1mopenstack_compute_instance_v2.node1__instance: Still destroying... [id=6ee335eb-e273-4f3c-ad65-b5f6de9c7842, 00m14s elapsed][0m[0m
+[0m[1mopenstack_compute_instance_v2.node1__instance: Destruction complete after 14s[0m
+[0m[1mopenstack_compute_instance_v2.node3__instance: Destruction complete after 14s[0m
+[0m[1mopenstack_networking_port_v2.node1__port: Destroying... [id=fbf84780-cbfb-42ba-92f5-28268dafa632][0m[0m
+[0m[1mopenstack_compute_keypair_v2.node1__keypair: Destroying... [id=nueva_clave_wazuh_node1_][0m[0m
+[0m[1mopenstack_networking_floatingip_v2.node1__fip: Destroying... [id=09e0732b-967f-4820-a6c8-59228bc9bbea][0m[0m
+[0m[1mopenstack_compute_keypair_v2.node1__keypair: Destruction complete after 0s[0m
+[0m[1mopenstack_networking_port_v2.node3__port: Destroying... [id=c164dc5f-920e-4b68-8210-772d27c412d0][0m[0m
+[0m[1mopenstack_compute_instance_v2.node2__instance: Still destroying... [id=823713b7-5c80-4b49-a256-9ad4ac56eedf, 00m14s elapsed][0m[0m
+[0m[1mopenstack_compute_instance_v2.node2__instance: Destruction complete after 14s[0m
+[0m[1mopenstack_networking_floatingip_v2.node3__fip: Destroying... [id=f01c1c36-b264-4e91-9f13-caa0819698d1][0m[0m
+[0m[1mopenstack_networking_port_v2.node1__port: Destruction complete after 6s[0m
+[0m[1mopenstack_compute_keypair_v2.node3__keypair: Destroying... [id=nueva_clave_wazuh_node3_][0m[0m
+[0m[1mopenstack_networking_port_v2.node3__port: Destruction complete after 6s[0m
+[0m[1mopenstack_networking_floatingip_v2.node1__fip: Destruction complete after 6s[0m
+[0m[1mopenstack_compute_keypair_v2.node3__keypair: Destruction complete after 0s[0m
+[0m[1mopenstack_compute_keypair_v2.node2__keypair: Destroying... [id=nueva_clave_wazuh_node2_][0m[0m
+[0m[1mopenstack_networking_port_v2.node2__port: Destroying... [id=8c8aad32-15b3-47a9-bd7f-d0c222bb9191][0m[0m
+[0m[1mopenstack_networking_floatingip_v2.node2__fip: Destroying... [id=c5e3a886-4014-4da7-a08f-aa64429c2d54][0m[0m
+[0m[1mopenstack_compute_keypair_v2.node2__keypair: Destruction complete after 0s[0m
+[0m[1mopenstack_networking_floatingip_v2.node3__fip: Destruction complete after 5s[0m
+[0m[1mopenstack_networking_port_v2.node2__port: Destruction complete after 5s[0m
+[0m[1mopenstack_networking_floatingip_v2.node2__fip: Destruction complete after 5s[0m
+[0m[1m[32m
+Destroy complete! Resources: 15 destroyed.
+[0m✅ Recursos Terraform destruidos correctamente.
+🧹 Eliminando archivos temporales...
+🗑️  Eliminando carpeta tf_out completa...
+✨ Carpeta tf_out eliminada con éxito. Entorno restaurado.
+2025-10-21 16:05:22,146 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 16:05:22,158 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+⚠️  No se encontró el directorio tf_out.
+➡️  No hay recursos Terraform que destruir. Saliendo sin error.
+-----------------------------------------------
+🧾 Verificando archivo de escenario...
+🗑️  Eliminando archivo de escenario: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/scenario_file.json
+✅ Archivo scenario_file.json eliminado correctamente.
+===============================================
+✅ Proceso de destrucción completado.
+===============================================
+2025-10-21 16:05:33,380 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 16:05:33,388 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+⚠️  No se encontró el directorio tf_out.
+➡️  No hay recursos Terraform que destruir. Saliendo sin error.
+-----------------------------------------------
+🧾 Verificando archivo de escenario...
+⚠️  No se encontró el archivo scenario_file.json.
+===============================================
+✅ Proceso de destrucción completado.
+===============================================
+2025-10-21 16:12:17,762 - INFO - 🧨 Ejecutando script de destrucción: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/destroy_scenario.sh
+2025-10-21 16:12:44,656 - INFO - 📤 STDOUT:
+===============================================
+🧨 Iniciando destrucción del escenario Terraform
+📁 Directorio esperado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/../tf_out
+===============================================
+🚀 Ejecutando 'terraform destroy'...
+[0m[1mdata.openstack_networking_network_v2.node1__network: Reading...[0m[0m
+[0m[1mdata.openstack_images_image_v2.node3__image: Reading...[0m[0m
+[0m[1mdata.openstack_images_image_v2.node2__image: Reading...[0m[0m
+[0m[1mopenstack_networking_floatingip_v2.node3__fip: Refreshing state... [id=227d5490-fa37-420b-9b90-4d309dd6b178][0m
+[0m[1mdata.openstack_images_image_v2.node2__image: Read complete after 1s [id=ef504cf3-7878-4b9a-9e71-7b34de8b1fb9][0m
+[0m[1mdata.openstack_compute_flavor_v2.node2__flavor: Reading...[0m[0m
+[0m[1mdata.openstack_images_image_v2.node3__image: Read complete after 1s [id=ef504cf3-7878-4b9a-9e71-7b34de8b1fb9][0m
+[0m[1mdata.openstack_networking_secgroup_v2.node2__secgroup: Reading...[0m[0m
+[0m[1mdata.openstack_networking_network_v2.node1__network: Read complete after 1s [id=0bb554c2-9a9f-4533-a765-519fe237a20f][0m
+[0m[1mopenstack_compute_keypair_v2.node2__keypair: Refreshing state... [id=nueva_clave_wazuh_node2_][0m
+[0m[1mdata.openstack_compute_flavor_v2.node2__flavor: Read complete after 0s [id=50d634a4-6b06-4124-8358-6b63c53216a5][0m
+[0m[1mdata.openstack_images_image_v2.node1__image: Reading...[0m[0m
+[0m[1mdata.openstack_networking_secgroup_v2.node2__secgroup: Read complete after 0s [id=3ab85c46-373b-4163-a5d7-915aa846adf9][0m
+[0m[1mopenstack_compute_keypair_v2.node3__keypair: Refreshing state... [id=nueva_clave_wazuh_node3_][0m
+[0m[1mdata.openstack_images_image_v2.node1__image: Read complete after 0s [id=7cbe16a7-472b-4477-afd5-bafcfbf99a6a][0m
+[0m[1mdata.openstack_networking_network_v2.node3__network: Reading...[0m[0m
+[0m[1mdata.openstack_networking_secgroup_v2.node3__secgroup: Reading...[0m[0m
+[0m[1mdata.openstack_networking_network_v2.node2__network: Reading...[0m[0m
+[0m[1mopenstack_networking_floatingip_v2.node2__fip: Refreshing state... [id=2af5f8e0-7950-45c6-975c-a74adead446d][0m
+[0m[1mdata.openstack_networking_secgroup_v2.node3__secgroup: Read complete after 0s [id=3ab85c46-373b-4163-a5d7-915aa846adf9][0m
+[0m[1mopenstack_networking_floatingip_v2.node1__fip: Refreshing state... [id=7e537a12-371b-4942-ab35-84d01c1cc996][0m
+[0m[1mdata.openstack_networking_network_v2.node3__network: Read complete after 0s [id=0bb554c2-9a9f-4533-a765-519fe237a20f][0m
+[0m[1mdata.openstack_compute_flavor_v2.node3__flavor: Reading...[0m[0m
+[0m[1mdata.openstack_networking_network_v2.node2__network: Read complete after 0s [id=0bb554c2-9a9f-4533-a765-519fe237a20f][0m
+[0m[1mdata.openstack_compute_flavor_v2.node1__flavor: Reading...[0m[0m
+[0m[1mdata.openstack_compute_flavor_v2.node3__flavor: Read complete after 0s [id=50d634a4-6b06-4124-8358-6b63c53216a5][0m
+[0m[1mdata.openstack_networking_secgroup_v2.node1__secgroup: Reading...[0m[0m
+[0m[1mdata.openstack_compute_flavor_v2.node1__flavor: Read complete after 0s [id=32d88d49-0357-4e4f-9940-9789acc9d044][0m
+[0m[1mopenstack_compute_keypair_v2.node1__keypair: Refreshing state... [id=nueva_clave_wazuh_node1_][0m
+[0m[1mdata.openstack_networking_subnet_v2.node1__subnet: Reading...[0m[0m
+[0m[1mdata.openstack_networking_subnet_v2.node3__subnet: Reading...[0m[0m
+[0m[1mdata.openstack_networking_secgroup_v2.node1__secgroup: Read complete after 0s [id=3ab85c46-373b-4163-a5d7-915aa846adf9][0m
+[0m[1mdata.openstack_networking_subnet_v2.node2__subnet: Reading...[0m[0m
+[0m[1mdata.openstack_networking_subnet_v2.node1__subnet: Read complete after 0s [id=9a46e7ed-e614-41a1-ba87-6166eb344a05][0m
+[0m[1mopenstack_networking_port_v2.node1__port: Refreshing state... [id=bf516d28-ddc3-4100-b560-b5fd218ac2ee][0m
+[0m[1mdata.openstack_networking_subnet_v2.node3__subnet: Read complete after 0s [id=9a46e7ed-e614-41a1-ba87-6166eb344a05][0m
+[0m[1mopenstack_networking_port_v2.node3__port: Refreshing state... [id=1594d507-9764-4cdb-ae85-e98ad1c310a5][0m
+[0m[1mdata.openstack_networking_subnet_v2.node2__subnet: Read complete after 0s [id=9a46e7ed-e614-41a1-ba87-6166eb344a05][0m
+[0m[1mopenstack_networking_port_v2.node2__port: Refreshing state... [id=a5b39ae4-a093-4337-a0a9-243d9aaa328c][0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node1__fip_associate: Refreshing state... [id=7e537a12-371b-4942-ab35-84d01c1cc996][0m
+[0m[1mopenstack_compute_instance_v2.node1__instance: Refreshing state... [id=0899c9dd-deec-406a-849a-74e0063320b2][0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node3__fip_associate: Refreshing state... [id=227d5490-fa37-420b-9b90-4d309dd6b178][0m
+[0m[1mopenstack_compute_instance_v2.node3__instance: Refreshing state... [id=efbab2b8-ff6b-4dcb-ba20-4e8b11e68e71][0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node2__fip_associate: Refreshing state... [id=2af5f8e0-7950-45c6-975c-a74adead446d][0m
+[0m[1mopenstack_compute_instance_v2.node2__instance: Refreshing state... [id=5e5443c2-ef38-455c-b2c2-b0e2ee554594][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy[0m
+
+Terraform will perform the following actions:
+
+[1m  # openstack_compute_instance_v2.node1__instance[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_instance_v2" "node1__instance" {
+      [31m-[0m[0m access_ip_v4        = "192.168.100.183" [90m-> null[0m[0m
+      [31m-[0m[0m all_metadata        = {} [90m-> null[0m[0m
+      [31m-[0m[0m all_tags            = [] [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone   = "nova" [90m-> null[0m[0m
+      [31m-[0m[0m created             = "2025-10-21 14:07:47 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_id           = "32d88d49-0357-4e4f-9940-9789acc9d044" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_name         = "large" [90m-> null[0m[0m
+      [31m-[0m[0m force_delete        = false [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "0899c9dd-deec-406a-849a-74e0063320b2" [90m-> null[0m[0m
+      [31m-[0m[0m image_id            = "7cbe16a7-472b-4477-afd5-bafcfbf99a6a" [90m-> null[0m[0m
+      [31m-[0m[0m image_name          = "Ubuntu22.04" [90m-> null[0m[0m
+      [31m-[0m[0m key_pair            = "nueva_clave_wazuh_node1_" [90m-> null[0m[0m
+      [31m-[0m[0m name                = "monitor 1" [90m-> null[0m[0m
+      [31m-[0m[0m power_state         = "active" [90m-> null[0m[0m
+      [31m-[0m[0m region              = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_groups     = [
+          [31m-[0m[0m "sg_wazuh_suricata",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m stop_before_destroy = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                = [] [90m-> null[0m[0m
+      [31m-[0m[0m updated             = "2025-10-21 14:08:03 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m user_data           = "04517731785ee2caf6e3895e58fae9d18fc16cda" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+
+      [31m-[0m[0m network {
+          [31m-[0m[0m access_network = false [90m-> null[0m[0m
+          [31m-[0m[0m fixed_ip_v4    = "192.168.100.183" [90m-> null[0m[0m
+          [31m-[0m[0m mac            = "fa:16:3e:62:ff:bf" [90m-> null[0m[0m
+          [31m-[0m[0m name           = "red_privada" [90m-> null[0m[0m
+          [31m-[0m[0m port           = "bf516d28-ddc3-4100-b560-b5fd218ac2ee" [90m-> null[0m[0m
+          [31m-[0m[0m uuid           = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+    }
+
+[1m  # openstack_compute_instance_v2.node2__instance[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_instance_v2" "node2__instance" {
+      [31m-[0m[0m access_ip_v4        = "192.168.100.184" [90m-> null[0m[0m
+      [31m-[0m[0m all_metadata        = {} [90m-> null[0m[0m
+      [31m-[0m[0m all_tags            = [] [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone   = "nova" [90m-> null[0m[0m
+      [31m-[0m[0m created             = "2025-10-21 14:07:39 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_id           = "50d634a4-6b06-4124-8358-6b63c53216a5" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_name         = "medium" [90m-> null[0m[0m
+      [31m-[0m[0m force_delete        = false [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "5e5443c2-ef38-455c-b2c2-b0e2ee554594" [90m-> null[0m[0m
+      [31m-[0m[0m image_id            = "ef504cf3-7878-4b9a-9e71-7b34de8b1fb9" [90m-> null[0m[0m
+      [31m-[0m[0m image_name          = "debian-12" [90m-> null[0m[0m
+      [31m-[0m[0m key_pair            = "nueva_clave_wazuh_node2_" [90m-> null[0m[0m
+      [31m-[0m[0m name                = "attack 2" [90m-> null[0m[0m
+      [31m-[0m[0m power_state         = "active" [90m-> null[0m[0m
+      [31m-[0m[0m region              = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_groups     = [
+          [31m-[0m[0m "sg_wazuh_suricata",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m stop_before_destroy = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                = [] [90m-> null[0m[0m
+      [31m-[0m[0m updated             = "2025-10-21 14:07:55 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m user_data           = "d957ca0afd4e07ac99fc58b87fc49732c10b42cc" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+
+      [31m-[0m[0m network {
+          [31m-[0m[0m access_network = false [90m-> null[0m[0m
+          [31m-[0m[0m fixed_ip_v4    = "192.168.100.184" [90m-> null[0m[0m
+          [31m-[0m[0m mac            = "fa:16:3e:52:38:6d" [90m-> null[0m[0m
+          [31m-[0m[0m name           = "red_privada" [90m-> null[0m[0m
+          [31m-[0m[0m port           = "a5b39ae4-a093-4337-a0a9-243d9aaa328c" [90m-> null[0m[0m
+          [31m-[0m[0m uuid           = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+    }
+
+[1m  # openstack_compute_instance_v2.node3__instance[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_instance_v2" "node3__instance" {
+      [31m-[0m[0m access_ip_v4        = "192.168.100.178" [90m-> null[0m[0m
+      [31m-[0m[0m all_metadata        = {} [90m-> null[0m[0m
+      [31m-[0m[0m all_tags            = [] [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone   = "nova" [90m-> null[0m[0m
+      [31m-[0m[0m created             = "2025-10-21 14:07:48 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_id           = "50d634a4-6b06-4124-8358-6b63c53216a5" [90m-> null[0m[0m
+      [31m-[0m[0m flavor_name         = "medium" [90m-> null[0m[0m
+      [31m-[0m[0m force_delete        = false [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "efbab2b8-ff6b-4dcb-ba20-4e8b11e68e71" [90m-> null[0m[0m
+      [31m-[0m[0m image_id            = "ef504cf3-7878-4b9a-9e71-7b34de8b1fb9" [90m-> null[0m[0m
+      [31m-[0m[0m image_name          = "debian-12" [90m-> null[0m[0m
+      [31m-[0m[0m key_pair            = "nueva_clave_wazuh_node3_" [90m-> null[0m[0m
+      [31m-[0m[0m name                = "victim 3" [90m-> null[0m[0m
+      [31m-[0m[0m power_state         = "active" [90m-> null[0m[0m
+      [31m-[0m[0m region              = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_groups     = [
+          [31m-[0m[0m "sg_wazuh_suricata",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m stop_before_destroy = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                = [] [90m-> null[0m[0m
+      [31m-[0m[0m updated             = "2025-10-21 14:08:01 +0000 UTC" [90m-> null[0m[0m
+      [31m-[0m[0m user_data           = "d957ca0afd4e07ac99fc58b87fc49732c10b42cc" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+
+      [31m-[0m[0m network {
+          [31m-[0m[0m access_network = false [90m-> null[0m[0m
+          [31m-[0m[0m fixed_ip_v4    = "192.168.100.178" [90m-> null[0m[0m
+          [31m-[0m[0m mac            = "fa:16:3e:ab:76:cf" [90m-> null[0m[0m
+          [31m-[0m[0m name           = "red_privada" [90m-> null[0m[0m
+          [31m-[0m[0m port           = "1594d507-9764-4cdb-ae85-e98ad1c310a5" [90m-> null[0m[0m
+          [31m-[0m[0m uuid           = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+    }
+
+[1m  # openstack_compute_keypair_v2.node1__keypair[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_keypair_v2" "node1__keypair" {
+      [31m-[0m[0m fingerprint = "df:47:06:3f:76:b8:e7:06:35:66:1d:b5:bf:6b:4c:14" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "nueva_clave_wazuh_node1_" [90m-> null[0m[0m
+      [31m-[0m[0m name        = "nueva_clave_wazuh_node1_" [90m-> null[0m[0m
+      [31m-[0m[0m public_key  = <<-EOT
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhSxBIlwVb8NnVG2jhaFPLzWNk51WXj5FfMrY+DLbt6UeB2yAbd0l1kagKsFUBkPoDwtRSjk39W+jolkzU40jt3tNH59NFfIXFfTkDFmtlslSlo/VFIS8g1z6BhH2Gn/YVUS0qQer4d58v4PlC9nbEtSazIk3p6ctgMbsmeXXUHbwEegvDNF3OPKOdYuB0p6OcWhCDJjVK3OY6KHyDPQKG6TGF4m/siyUqJ76FAFsZ5kDelc1MUx7P2TOzhKF6chQ+dW1ywtu2CNSkInh+hx3e2qLMfqnRf6YjiqWkUQ/MFegJ9vkFOwOATQEvxB5FG2HzG+iFmumIYWX2msknn2fTAHRrpCIxsh1H2gjqXfoVHWrlPRpHcqrjs0OuW1I7bZnkiRF7HFtzvL1ck3pki3YhxNoxsKPJWiJSrO0D4HC+H7w+IxvSLBuvtIci73kI2mCPeWI8449k7tF6pwdzAvfecIkdsk2o/OBjcX+B2pitSDIXhEcDKnFg8sP/3tZq5b6+lK6U+sx4dUgTdbVGr8pdfvdpX4zRRQQKpkudFi+ZzC+DAu3mRVrBFs5vSel0Jd5N1eCyIv4urOap3jVWYXHLobDKlxnZbMWEGTNI+qPWImCSgBzLnI3F07oNSjaoI3Hq87iAYuj0OeWZlIUwUx/PqwSy4izSyeGqud9iB4f0dQ== younes@nics-lab-VMware20-1
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_compute_keypair_v2.node2__keypair[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_keypair_v2" "node2__keypair" {
+      [31m-[0m[0m fingerprint = "df:47:06:3f:76:b8:e7:06:35:66:1d:b5:bf:6b:4c:14" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "nueva_clave_wazuh_node2_" [90m-> null[0m[0m
+      [31m-[0m[0m name        = "nueva_clave_wazuh_node2_" [90m-> null[0m[0m
+      [31m-[0m[0m public_key  = <<-EOT
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhSxBIlwVb8NnVG2jhaFPLzWNk51WXj5FfMrY+DLbt6UeB2yAbd0l1kagKsFUBkPoDwtRSjk39W+jolkzU40jt3tNH59NFfIXFfTkDFmtlslSlo/VFIS8g1z6BhH2Gn/YVUS0qQer4d58v4PlC9nbEtSazIk3p6ctgMbsmeXXUHbwEegvDNF3OPKOdYuB0p6OcWhCDJjVK3OY6KHyDPQKG6TGF4m/siyUqJ76FAFsZ5kDelc1MUx7P2TOzhKF6chQ+dW1ywtu2CNSkInh+hx3e2qLMfqnRf6YjiqWkUQ/MFegJ9vkFOwOATQEvxB5FG2HzG+iFmumIYWX2msknn2fTAHRrpCIxsh1H2gjqXfoVHWrlPRpHcqrjs0OuW1I7bZnkiRF7HFtzvL1ck3pki3YhxNoxsKPJWiJSrO0D4HC+H7w+IxvSLBuvtIci73kI2mCPeWI8449k7tF6pwdzAvfecIkdsk2o/OBjcX+B2pitSDIXhEcDKnFg8sP/3tZq5b6+lK6U+sx4dUgTdbVGr8pdfvdpX4zRRQQKpkudFi+ZzC+DAu3mRVrBFs5vSel0Jd5N1eCyIv4urOap3jVWYXHLobDKlxnZbMWEGTNI+qPWImCSgBzLnI3F07oNSjaoI3Hq87iAYuj0OeWZlIUwUx/PqwSy4izSyeGqud9iB4f0dQ== younes@nics-lab-VMware20-1
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_compute_keypair_v2.node3__keypair[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_compute_keypair_v2" "node3__keypair" {
+      [31m-[0m[0m fingerprint = "df:47:06:3f:76:b8:e7:06:35:66:1d:b5:bf:6b:4c:14" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "nueva_clave_wazuh_node3_" [90m-> null[0m[0m
+      [31m-[0m[0m name        = "nueva_clave_wazuh_node3_" [90m-> null[0m[0m
+      [31m-[0m[0m public_key  = <<-EOT
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhSxBIlwVb8NnVG2jhaFPLzWNk51WXj5FfMrY+DLbt6UeB2yAbd0l1kagKsFUBkPoDwtRSjk39W+jolkzU40jt3tNH59NFfIXFfTkDFmtlslSlo/VFIS8g1z6BhH2Gn/YVUS0qQer4d58v4PlC9nbEtSazIk3p6ctgMbsmeXXUHbwEegvDNF3OPKOdYuB0p6OcWhCDJjVK3OY6KHyDPQKG6TGF4m/siyUqJ76FAFsZ5kDelc1MUx7P2TOzhKF6chQ+dW1ywtu2CNSkInh+hx3e2qLMfqnRf6YjiqWkUQ/MFegJ9vkFOwOATQEvxB5FG2HzG+iFmumIYWX2msknn2fTAHRrpCIxsh1H2gjqXfoVHWrlPRpHcqrjs0OuW1I7bZnkiRF7HFtzvL1ck3pki3YhxNoxsKPJWiJSrO0D4HC+H7w+IxvSLBuvtIci73kI2mCPeWI8449k7tF6pwdzAvfecIkdsk2o/OBjcX+B2pitSDIXhEcDKnFg8sP/3tZq5b6+lK6U+sx4dUgTdbVGr8pdfvdpX4zRRQQKpkudFi+ZzC+DAu3mRVrBFs5vSel0Jd5N1eCyIv4urOap3jVWYXHLobDKlxnZbMWEGTNI+qPWImCSgBzLnI3F07oNSjaoI3Hq87iAYuj0OeWZlIUwUx/PqwSy4izSyeGqud9iB4f0dQ== younes@nics-lab-VMware20-1
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_associate_v2.node1__fip_associate[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_associate_v2" "node1__fip_associate" {
+      [31m-[0m[0m fixed_ip    = "192.168.100.183" [90m-> null[0m[0m
+      [31m-[0m[0m floating_ip = "10.0.2.107" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "7e537a12-371b-4942-ab35-84d01c1cc996" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "bf516d28-ddc3-4100-b560-b5fd218ac2ee" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_associate_v2.node2__fip_associate[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_associate_v2" "node2__fip_associate" {
+      [31m-[0m[0m fixed_ip    = "192.168.100.184" [90m-> null[0m[0m
+      [31m-[0m[0m floating_ip = "10.0.2.99" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "2af5f8e0-7950-45c6-975c-a74adead446d" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "a5b39ae4-a093-4337-a0a9-243d9aaa328c" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_associate_v2.node3__fip_associate[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_associate_v2" "node3__fip_associate" {
+      [31m-[0m[0m fixed_ip    = "192.168.100.178" [90m-> null[0m[0m
+      [31m-[0m[0m floating_ip = "10.0.2.193" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "227d5490-fa37-420b-9b90-4d309dd6b178" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "1594d507-9764-4cdb-ae85-e98ad1c310a5" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_v2.node1__fip[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_v2" "node1__fip" {
+      [31m-[0m[0m address     = "10.0.2.107" [90m-> null[0m[0m
+      [31m-[0m[0m all_tags    = [] [90m-> null[0m[0m
+      [31m-[0m[0m fixed_ip    = "192.168.100.183" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "7e537a12-371b-4942-ab35-84d01c1cc996" [90m-> null[0m[0m
+      [31m-[0m[0m pool        = "red_externa" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "bf516d28-ddc3-4100-b560-b5fd218ac2ee" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m tags        = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id   = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_v2.node2__fip[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_v2" "node2__fip" {
+      [31m-[0m[0m address     = "10.0.2.99" [90m-> null[0m[0m
+      [31m-[0m[0m all_tags    = [] [90m-> null[0m[0m
+      [31m-[0m[0m fixed_ip    = "192.168.100.184" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "2af5f8e0-7950-45c6-975c-a74adead446d" [90m-> null[0m[0m
+      [31m-[0m[0m pool        = "red_externa" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "a5b39ae4-a093-4337-a0a9-243d9aaa328c" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m tags        = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id   = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_networking_floatingip_v2.node3__fip[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_floatingip_v2" "node3__fip" {
+      [31m-[0m[0m address     = "10.0.2.193" [90m-> null[0m[0m
+      [31m-[0m[0m all_tags    = [] [90m-> null[0m[0m
+      [31m-[0m[0m fixed_ip    = "192.168.100.178" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "227d5490-fa37-420b-9b90-4d309dd6b178" [90m-> null[0m[0m
+      [31m-[0m[0m pool        = "red_externa" [90m-> null[0m[0m
+      [31m-[0m[0m port_id     = "1594d507-9764-4cdb-ae85-e98ad1c310a5" [90m-> null[0m[0m
+      [31m-[0m[0m region      = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m tags        = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id   = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # openstack_networking_port_v2.node1__port[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_port_v2" "node1__port" {
+      [31m-[0m[0m admin_state_up         = true [90m-> null[0m[0m
+      [31m-[0m[0m all_fixed_ips          = [
+          [31m-[0m[0m "192.168.100.183",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_security_group_ids = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_tags               = [] [90m-> null[0m[0m
+      [31m-[0m[0m device_id              = "0899c9dd-deec-406a-849a-74e0063320b2" [90m-> null[0m[0m
+      [31m-[0m[0m device_owner           = "compute:nova" [90m-> null[0m[0m
+      [31m-[0m[0m dns_assignment         = [] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "bf516d28-ddc3-4100-b560-b5fd218ac2ee" [90m-> null[0m[0m
+      [31m-[0m[0m mac_address            = "fa:16:3e:62:ff:bf" [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "node1_-port" [90m-> null[0m[0m
+      [31m-[0m[0m network_id             = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+      [31m-[0m[0m port_security_enabled  = true [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_ids     = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id              = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m binding {
+          [31m-[0m[0m host_id     = "nics-lab-VMware20-1" [90m-> null[0m[0m
+          [31m-[0m[0m profile     = jsonencode({})
+          [31m-[0m[0m vif_details = {
+              [31m-[0m[0m "bound_drivers"   = jsonencode(
+                    {
+                      [31m-[0m[0m "0" = "openvswitch"
+                    }
+                )
+              [31m-[0m[0m "bridge_name"     = "br-int"
+              [31m-[0m[0m "connectivity"    = "l2"
+              [31m-[0m[0m "datapath_type"   = "system"
+              [31m-[0m[0m "ovs_hybrid_plug" = "true"
+              [31m-[0m[0m "port_filter"     = "true"
+            } [90m-> null[0m[0m
+          [31m-[0m[0m vif_type    = "ovs" [90m-> null[0m[0m
+          [31m-[0m[0m vnic_type   = "normal" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m fixed_ip {
+          [31m-[0m[0m subnet_id  = "9a46e7ed-e614-41a1-ba87-6166eb344a05" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+    }
+
+[1m  # openstack_networking_port_v2.node2__port[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_port_v2" "node2__port" {
+      [31m-[0m[0m admin_state_up         = true [90m-> null[0m[0m
+      [31m-[0m[0m all_fixed_ips          = [
+          [31m-[0m[0m "192.168.100.184",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_security_group_ids = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_tags               = [] [90m-> null[0m[0m
+      [31m-[0m[0m device_id              = "5e5443c2-ef38-455c-b2c2-b0e2ee554594" [90m-> null[0m[0m
+      [31m-[0m[0m device_owner           = "compute:nova" [90m-> null[0m[0m
+      [31m-[0m[0m dns_assignment         = [] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "a5b39ae4-a093-4337-a0a9-243d9aaa328c" [90m-> null[0m[0m
+      [31m-[0m[0m mac_address            = "fa:16:3e:52:38:6d" [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "node2_-port" [90m-> null[0m[0m
+      [31m-[0m[0m network_id             = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+      [31m-[0m[0m port_security_enabled  = true [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_ids     = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id              = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m binding {
+          [31m-[0m[0m host_id     = "nics-lab-VMware20-1" [90m-> null[0m[0m
+          [31m-[0m[0m profile     = jsonencode({})
+          [31m-[0m[0m vif_details = {
+              [31m-[0m[0m "bound_drivers"   = jsonencode(
+                    {
+                      [31m-[0m[0m "0" = "openvswitch"
+                    }
+                )
+              [31m-[0m[0m "bridge_name"     = "br-int"
+              [31m-[0m[0m "connectivity"    = "l2"
+              [31m-[0m[0m "datapath_type"   = "system"
+              [31m-[0m[0m "ovs_hybrid_plug" = "true"
+              [31m-[0m[0m "port_filter"     = "true"
+            } [90m-> null[0m[0m
+          [31m-[0m[0m vif_type    = "ovs" [90m-> null[0m[0m
+          [31m-[0m[0m vnic_type   = "normal" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m fixed_ip {
+          [31m-[0m[0m subnet_id  = "9a46e7ed-e614-41a1-ba87-6166eb344a05" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+    }
+
+[1m  # openstack_networking_port_v2.node3__port[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "openstack_networking_port_v2" "node3__port" {
+      [31m-[0m[0m admin_state_up         = true [90m-> null[0m[0m
+      [31m-[0m[0m all_fixed_ips          = [
+          [31m-[0m[0m "192.168.100.178",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_security_group_ids = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m all_tags               = [] [90m-> null[0m[0m
+      [31m-[0m[0m device_id              = "efbab2b8-ff6b-4dcb-ba20-4e8b11e68e71" [90m-> null[0m[0m
+      [31m-[0m[0m device_owner           = "compute:nova" [90m-> null[0m[0m
+      [31m-[0m[0m dns_assignment         = [] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "1594d507-9764-4cdb-ae85-e98ad1c310a5" [90m-> null[0m[0m
+      [31m-[0m[0m mac_address            = "fa:16:3e:ab:76:cf" [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "node3_-port" [90m-> null[0m[0m
+      [31m-[0m[0m network_id             = "0bb554c2-9a9f-4533-a765-519fe237a20f" [90m-> null[0m[0m
+      [31m-[0m[0m port_security_enabled  = true [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "RegionOne" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_ids     = [
+          [31m-[0m[0m "3ab85c46-373b-4163-a5d7-915aa846adf9",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = [] [90m-> null[0m[0m
+      [31m-[0m[0m tenant_id              = "32a764ed74c5451986efa01a6d34bbde" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m binding {
+          [31m-[0m[0m host_id     = "nics-lab-VMware20-1" [90m-> null[0m[0m
+          [31m-[0m[0m profile     = jsonencode({})
+          [31m-[0m[0m vif_details = {
+              [31m-[0m[0m "bound_drivers"   = jsonencode(
+                    {
+                      [31m-[0m[0m "0" = "openvswitch"
+                    }
+                )
+              [31m-[0m[0m "bridge_name"     = "br-int"
+              [31m-[0m[0m "connectivity"    = "l2"
+              [31m-[0m[0m "datapath_type"   = "system"
+              [31m-[0m[0m "ovs_hybrid_plug" = "true"
+              [31m-[0m[0m "port_filter"     = "true"
+            } [90m-> null[0m[0m
+          [31m-[0m[0m vif_type    = "ovs" [90m-> null[0m[0m
+          [31m-[0m[0m vnic_type   = "normal" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m fixed_ip {
+          [31m-[0m[0m subnet_id  = "9a46e7ed-e614-41a1-ba87-6166eb344a05" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+    }
+
+[1mPlan:[0m 0 to add, 0 to change, 15 to destroy.
+[0m
+Changes to Outputs:
+  [31m-[0m[0m node1__floating_ip = "10.0.2.107" [90m-> null[0m[0m
+  [31m-[0m[0m node2__floating_ip = "10.0.2.99" [90m-> null[0m[0m
+  [31m-[0m[0m node3__floating_ip = "10.0.2.193" [90m-> null[0m[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node2__fip_associate: Destroying... [id=2af5f8e0-7950-45c6-975c-a74adead446d][0m[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node1__fip_associate: Destroying... [id=7e537a12-371b-4942-ab35-84d01c1cc996][0m[0m
+[0m[1mopenstack_compute_instance_v2.node2__instance: Destroying... [id=5e5443c2-ef38-455c-b2c2-b0e2ee554594][0m[0m
+[0m[1mopenstack_compute_instance_v2.node1__instance: Destroying... [id=0899c9dd-deec-406a-849a-74e0063320b2][0m[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node1__fip_associate: Destruction complete after 1s[0m
+[0m[1mopenstack_compute_instance_v2.node3__instance: Destroying... [id=efbab2b8-ff6b-4dcb-ba20-4e8b11e68e71][0m[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node2__fip_associate: Destruction complete after 1s[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node3__fip_associate: Destroying... [id=227d5490-fa37-420b-9b90-4d309dd6b178][0m[0m
+[0m[1mopenstack_networking_floatingip_associate_v2.node3__fip_associate: Destruction complete after 0s[0m
+[0m[1mopenstack_compute_instance_v2.node2__instance: Still destroying... [id=5e5443c2-ef38-455c-b2c2-b0e2ee554594, 00m13s elapsed][0m[0m
+[0m[1mopenstack_compute_instance_v2.node1__instance: Still destroying... [id=0899c9dd-deec-406a-849a-74e0063320b2, 00m13s elapsed][0m[0m
+[0m[1mopenstack_compute_instance_v2.node1__instance: Destruction complete after 14s[0m
+[0m[1mopenstack_compute_keypair_v2.node1__keypair: Destroying... [id=nueva_clave_wazuh_node1_][0m[0m
+[0m[1mopenstack_networking_floatingip_v2.node1__fip: Destroying... [id=7e537a12-371b-4942-ab35-84d01c1cc996][0m[0m
+[0m[1mopenstack_compute_keypair_v2.node1__keypair: Destruction complete after 0s[0m
+[0m[1mopenstack_networking_port_v2.node1__port: Destroying... [id=bf516d28-ddc3-4100-b560-b5fd218ac2ee][0m[0m
+[0m[1mopenstack_compute_instance_v2.node3__instance: Still destroying... [id=efbab2b8-ff6b-4dcb-ba20-4e8b11e68e71, 00m13s elapsed][0m[0m
+[0m[1mopenstack_compute_instance_v2.node3__instance: Destruction complete after 13s[0m
+[0m[1mopenstack_compute_instance_v2.node2__instance: Destruction complete after 14s[0m
+[0m[1mopenstack_networking_floatingip_v2.node3__fip: Destroying... [id=227d5490-fa37-420b-9b90-4d309dd6b178][0m[0m
+[0m[1mopenstack_networking_port_v2.node3__port: Destroying... [id=1594d507-9764-4cdb-ae85-e98ad1c310a5][0m[0m
+[0m[1mopenstack_networking_floatingip_v2.node1__fip: Destruction complete after 5s[0m
+[0m[1mopenstack_networking_port_v2.node1__port: Destruction complete after 5s[0m
+[0m[1mopenstack_compute_keypair_v2.node2__keypair: Destroying... [id=nueva_clave_wazuh_node2_][0m[0m
+[0m[1mopenstack_compute_keypair_v2.node3__keypair: Destroying... [id=nueva_clave_wazuh_node3_][0m[0m
+[0m[1mopenstack_compute_keypair_v2.node3__keypair: Destruction complete after 0s[0m
+[0m[1mopenstack_compute_keypair_v2.node2__keypair: Destruction complete after 0s[0m
+[0m[1mopenstack_networking_floatingip_v2.node2__fip: Destroying... [id=2af5f8e0-7950-45c6-975c-a74adead446d][0m[0m
+[0m[1mopenstack_networking_port_v2.node2__port: Destroying... [id=a5b39ae4-a093-4337-a0a9-243d9aaa328c][0m[0m
+[0m[1mopenstack_networking_port_v2.node3__port: Destruction complete after 6s[0m
+[0m[1mopenstack_networking_floatingip_v2.node3__fip: Destruction complete after 6s[0m
+[0m[1mopenstack_networking_port_v2.node2__port: Destruction complete after 6s[0m
+[0m[1mopenstack_networking_floatingip_v2.node2__fip: Destruction complete after 6s[0m
+[0m[1m[32m
+Destroy complete! Resources: 15 destroyed.
+[0m✅ Recursos Terraform destruidos correctamente.
+🧹 Eliminando archivos temporales...
+🗑️  Eliminando carpeta tf_out completa...
+✨ Carpeta tf_out eliminada con éxito. Entorno restaurado.
+-----------------------------------------------
+🧾 Verificando archivo de escenario...
+🗑️  Eliminando archivo de escenario: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/scenario/scenario_file.json
+✅ Archivo scenario_file.json eliminado correctamente.
+===============================================
+✅ Proceso de destrucción completado.
+===============================================

@@ -40,8 +40,49 @@ sys.stderr = StreamToLogger(logger, logging.ERROR)
 app = Flask(__name__)
 CORS(app)
 
-# === Cargar credenciales OpenStack ===
-OPENRC_PATH = os.path.join(os.path.dirname(__file__), "app-cred-app-openrc.sh")
+# === Generar y cargar credenciales OpenStack ===
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+GEN_SCRIPT = os.path.join(BASE_DIR, "generate_app_cred_openrc_from_clouds.sh")
+OPENRC_PATH = os.path.join(BASE_DIR, "admin-openrc.sh")
+
+try:
+    if os.path.exists(GEN_SCRIPT):
+        logger.info(f"⚙️ Ejecutando script de generación de credenciales: {GEN_SCRIPT}")
+
+        # Asegurar permisos de ejecución
+        if not os.access(GEN_SCRIPT, os.X_OK):
+            os.chmod(GEN_SCRIPT, 0o755)
+            logger.info(f"✅ Permisos de ejecución otorgados a {GEN_SCRIPT}")
+
+        # Ejecutar el script
+        proc = subprocess.run(
+            ["bash", GEN_SCRIPT],
+            cwd=BASE_DIR,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=False
+        )
+
+        logger.info("📤 Salida del script:")
+        logger.info(proc.stdout)
+        if proc.stderr:
+            logger.warning("📥 Errores durante la ejecución del script:")
+            logger.warning(proc.stderr)
+
+        # Validar resultado
+        if proc.returncode == 0 and os.path.exists(OPENRC_PATH):
+            logger.info(f"✅ Script ejecutado correctamente. Archivo generado: {OPENRC_PATH}")
+        else:
+            logger.warning(f"⚠️ No se generó correctamente {OPENRC_PATH}. Código de salida: {proc.returncode}")
+    else:
+        logger.warning(f"⚠️ Script {GEN_SCRIPT} no encontrado. Se omite la generación automática.")
+
+except Exception as e:
+    logger.error(f"❌ Error al ejecutar el script {GEN_SCRIPT}: {e}", exc_info=True)
+
+
+# === Cargar credenciales OpenStack desde admin-openrc.sh ===
 if os.path.exists(OPENRC_PATH):
     try:
         with open(OPENRC_PATH) as f:
@@ -55,6 +96,7 @@ if os.path.exists(OPENRC_PATH):
         logger.error(f"⚠️ Error al cargar {OPENRC_PATH}: {e}")
 else:
     logger.warning(f"⚠️ Archivo {OPENRC_PATH} no encontrado. Los comandos OpenStack pueden fallar.")
+
 
 MOCK_SCENARIO_DATA = {}
 SCENARIO_FILE = "scenario/scenario_file.json"
@@ -174,6 +216,67 @@ def get_scenario(scenarioName):
             "status": "error",
             "message": f"⚠️ Error inesperado al leer el escenario: {str(e)}"
         }), 500
+
+@app.route('/api/destroy_scenario', methods=['POST'])
+def destroy_scenario():
+    try:
+        base_dir = os.path.abspath(os.path.dirname(__file__))
+        script_path = os.path.join(base_dir, "scenario", "destroy_scenario.sh")
+
+        # 🔍 Verificar existencia del script
+        if not os.path.exists(script_path):
+            logger.error(f"❌ Script no encontrado: {script_path}")
+            return jsonify({
+                "status": "error",
+                "message": f"❌ Script no encontrado: {script_path}"
+            }), 404
+
+        # 🧩 Asegurar permisos de ejecución
+        if not os.access(script_path, os.X_OK):
+            os.chmod(script_path, 0o755)
+            logger.info(f"✅ Permisos de ejecución corregidos para {script_path}")
+
+        # 🚀 Ejecutar el script
+        logger.info(f"🧨 Ejecutando script de destrucción: {script_path}")
+        process = subprocess.run(
+            ["bash", script_path],
+            cwd=base_dir,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=False
+        )
+
+        stdout = process.stdout.strip()
+        stderr = process.stderr.strip()
+
+        # 📋 Log de salida
+        logger.info(f"📤 STDOUT:\n{stdout}")
+        if stderr:
+            logger.warning(f"📥 STDERR:\n{stderr}")
+
+        if process.returncode == 0:
+            return jsonify({
+                "status": "success",
+                "message": "✅ Escenario destruido correctamente.",
+                "stdout": stdout,
+                "stderr": stderr
+            }), 200
+        else:
+            return jsonify({
+                "status": "error",
+                "message": "⚠️ Error al ejecutar terraform destroy.",
+                "stdout": stdout,
+                "stderr": stderr
+            }), 500
+
+    except Exception as e:
+        logger.exception(f"❌ Error inesperado al ejecutar destroy_scenario.sh: {e}")
+        return jsonify({
+            "status": "error",
+            "message": f"❌ Error interno: {str(e)}"
+        }), 500
+
 
 
 @app.route('/api/create_scenario', methods=['POST'])
@@ -304,6 +407,10 @@ def index():
 @app.route('/<path:path>')
 def static_files(path):
     return send_from_directory('static', path)
+
+
+
+
 
 if __name__ == "__main__":
     app.run(host="localhost", port=5001, debug=True)
