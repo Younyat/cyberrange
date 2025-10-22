@@ -2849,3 +2849,219 @@ echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
 
 2025-10-22 13:21:52,401 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
 2025-10-22 13:21:52,401 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-22 13:34:51,348 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-22 13:34:51,352 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-22 13:34:51,359 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-22 13:34:51,460 - INFO - ⚙️ Ejecutando script de generación de credenciales: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/generate_app_cred_openrc_from_clouds.sh
+2025-10-22 13:34:51,581 - INFO - 📤 Salida del script:
+2025-10-22 13:34:51,582 - INFO - 📤 Salida del script:
+2025-10-22 13:34:51,582 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-22 13:34:51,583 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-22 13:34:51,584 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-22 13:34:51,585 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-22 13:34:51,586 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-22 13:34:51,586 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-22 13:34:51,622 - INFO - 📤 Salida del script:
+2025-10-22 13:34:51,622 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-22 13:34:51,623 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-22 13:34:51,625 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-22 13:34:51,674 - INFO - 📤 Salida del script:
+2025-10-22 13:34:51,675 - INFO - ===============================================
+🔐 Generador de admin-openrc.sh para OpenStack
+===============================================
+✅ yq ya está instalado.
+✅ jq ya está instalado.
+✅ Encontrado /etc/kolla/clouds.yaml
+✅ Archivo 'admin-openrc.sh' generado correctamente.
+📂 Contenido:
+-----------------------------------------------
+#!/bin/bash
+# ======================================================
+# 🧩 Archivo de credenciales para OpenStack
+# Generado automáticamente desde /etc/kolla/clouds.yaml
+# Cloud seleccionado: kolla-admin
+# ======================================================
+
+# ------------------------------------------------------
+# 🧹 Limpiar variables previas del entorno
+# ------------------------------------------------------
+unset OS_AUTH_TYPE
+unset OS_AUTH_URL
+unset OS_USERNAME
+unset OS_PASSWORD
+unset OS_USER_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_REGION_NAME
+unset OS_APPLICATION_CREDENTIAL_ID
+unset OS_APPLICATION_CREDENTIAL_SECRET
+unset OS_APPLICATION_CREDENTIAL_NAME
+
+# ------------------------------------------------------
+# 🔐 Configuración de credenciales
+# ------------------------------------------------------
+export OS_AUTH_URL=http://192.168.0.10:5000
+export OS_PROJECT_NAME=admin
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=JE6663lP1THXJqP8zVCWz3OQxqyXzu74b7Cd0Z7s
+export OS_INTERFACE=public
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME=RegionOne
+
+echo "✅ Credenciales OpenStack cargadas para $OS_PROJECT_NAME ($OS_USERNAME)"
+-----------------------------------------------
+
+🔧 Puedes usarlo con:
+   source admin-openrc.sh
+
+2025-10-22 13:34:51,675 - INFO - ✅ Script ejecutado correctamente. Archivo generado: /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
+2025-10-22 13:34:51,675 - INFO - ✅ Credenciales OpenStack cargadas desde /home/younes/Desktop/Openstack/terraform-ansible-1/dashboard-24/admin-openrc.sh
