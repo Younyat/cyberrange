@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-export OS_AUTH_TYPE=v3applicationcredential
-export OS_AUTH_URL=http://192.168.0.10:5000
-export OS_IDENTITY_API_VERSION=3
-export OS_REGION_NAME="RegionOne"
-export OS_INTERFACE=public
-export OS_APPLICATION_CREDENTIAL_ID=e7ec02983e844d4385c30e2309f464f5
-export OS_APPLICATION_CREDENTIAL_SECRET=WCO0auqsOQvoRGZPtLIblZtIeyfAGd9zuTqDOqJn2idmH-Ax-M7-x9zKda0aBQzwpBT2a2D0Kp1uki5yfRDMJg

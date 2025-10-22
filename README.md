@@ -4,6 +4,104 @@ Este documento describe los pasos necesarios para **instalar OpenStack**, **conf
 
 ---
 
+## ⚙️ Pre-Openstack-installer
+
+# Crear una topología de red interna virtual
+sudo chmod +x setup-veth.sh
+sudo bash setup-veth.sh
+```
+#!/bin/bash
+set -euo pipefail
+
+BRIDGE="uplinkbridge"
+VETH0="veth0"
+VETH1="veth1"
+SUBNET="10.0.2.0/24"
+GATEWAY="10.0.2.1"
+EXT_IF="ens33"
+
+echo "🔧 Configurando red virtual para OpenStack..."
+
+# Eliminar configuración previa si existe
+if ip link show "$BRIDGE" &>/dev/null; then
+  echo "⚠️  Eliminando bridge existente $BRIDGE..."
+  ip link set "$BRIDGE" down || true
+  brctl delbr "$BRIDGE" || true
+fi
+ip link del "$VETH0" type veth &>/dev/null || true
+ip link del "$VETH1" type veth &>/dev/null || true
+
+# Crear par veth
+ip link add "$VETH0" type veth peer name "$VETH1"
+ip link set "$VETH0" up
+ip link set "$VETH1" up
+
+# Crear bridge y añadir interfaz
+brctl addbr "$BRIDGE"
+brctl addif "$BRIDGE" "$VETH0"
+ip addr add "$GATEWAY/24" dev "$BRIDGE"
+ip link set "$BRIDGE" up
+
+# Configurar NAT
+iptables -t nat -A POSTROUTING -o "$EXT_IF" -s "$SUBNET" -j MASQUERADE
+iptables -A FORWARD -s "$SUBNET" -j ACCEPT
+
+echo "✅ Red virtual configurada:"
+echo "   Bridge: $BRIDGE ($GATEWAY)"
+echo "   Veths:  $VETH0 <-> $VETH1"
+```
+
+
+---------->                  Topología interna creada(Visual)
+
+
+                                      ┌────────────┐          ┌──────────────┐
+                                      │  ens33     │◀────────▶│   Internet   │
+                                      └────────────┘          └──────────────┘
+                                              │
+                                        [ NAT / iptables ]
+                                              │
+                                      ┌──────────────────────┐
+                                      │     uplinkbridge     │  ← puente (bridge)
+                                      └──────────────────────┘
+                                              │
+                                          ┌────┴─────┐
+                                          │          │
+                                      ┌───────┐  ┌───────┐
+                                      │ veth0 │  │ veth1 │  ← par de interfaces virtuales conectadas entre sí
+                                      └───────┘  └───────┘
+
+
+
+## ⚙️ ¿Por qué es importante para Kolla-Ansible?
+
+OpenStack necesita dos tipos de redes en un despliegue all-in-one:
+
+Gestión interna (Management network)
+> se usa ens33 para acceder a los contenedores y servicios internos.
+
+Red externa (Neutron external network)
+> requiere una interfaz física o virtual sin dirección IP (como veth1)
+para crear Floating IPs y tráfico hacia el exterior.
+
+eEecutar el escipt setup-veth.sh  creará esa interfaz virtual (veth1) conectada a un bridge (uplinkbridge) que tiene salida a Internet mediante NAT.
+
+
+
+## ⚙️ Persistencia y recomendaciones
+
+⚠️ Este script crea interfaces temporales:
+si reinicias tu máquina, desaparecerán (uplinkbridge, veth0, veth1).
+
+→ Si quieres que se creen automáticamente al iniciar el sistema, puedes:
+
+  > Guardarlo como /usr/local/bin/setup-veth.sh
+
+  > Añadirlo a /etc/rc.local o un servicio systemd que se ejecute al arranque.
+
+
+
+
 ## ⚙️ 1. Instalación de OpenStack
 
 Con el entorno virtual activado y las credenciales cargadas :
