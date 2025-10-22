@@ -8,6 +8,11 @@ SUBNET="10.0.2.0/24"
 GATEWAY="10.0.2.1"
 EXT_IF="ens33"
 
+
+
+sudo apt update -y
+sudo apt install -y iproute2 net-tools bridge-utils
+
 echo "🔧 Configurando red virtual para OpenStack..."
 
 # Eliminar configuración previa si existe
