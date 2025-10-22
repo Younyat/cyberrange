@@ -143,6 +143,8 @@ echo "✅ Dependencias del sistema y entorno virtual configurados correctamente.
 
 
 
+
+
 pip install --upgrade pip setuptools wheel
 
 # 2️⃣.1 Instalación de dependencias Python específicas
@@ -216,7 +218,9 @@ Werkzeug==3.1.3
 wrapt==1.17.2
 EOF
 
-pip install -r "$REQ_FILE" --no-cache-dir
+# Instalar todas las dependencias
+pip install -r requirements.txt --no-cache-dir
+
 echo "✅ Dependencias Python instaladas correctamente."
 
 # ============================================================
