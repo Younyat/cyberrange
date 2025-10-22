@@ -299,6 +299,8 @@ EOF
 
 sudo chown "$USER:$USER" /etc/kolla/globals.yml
 
+
+
 # ============================================================
 # 7️⃣ Despliegue Kolla-Ansible
 # ============================================================
@@ -306,6 +308,19 @@ kolla-ansible install-deps
 kolla-ansible bootstrap-servers -i ./all-in-one
 kolla-ansible prechecks -i ./all-in-one
 kolla-ansible deploy -i ./all-in-one
+# ============================================================
+# 🧩 Validar inventario y preparar post-deploy
+# ============================================================
+if [ ! -f /etc/kolla/ansible/inventory/all-in-one ]; then
+  echo "⚙️ Copiando inventario a /etc/kolla/ansible/inventory/..."
+  sudo mkdir -p /etc/kolla/ansible/inventory
+  sudo cp "$CURRENT_DIR/all-in-one" /etc/kolla/ansible/inventory/
+  sudo chown -R "$USER:$USER" /etc/kolla/ansible/inventory
+fi
+
+# ============================================================
+# 8️⃣ Post-deploy
+# ============================================================
 kolla-ansible post-deploy
 
 # ============================================================

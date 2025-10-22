@@ -1,268 +1,158 @@
-# 🧩 Guía de Despliegue de OpenStack y Dashboard UMA
+# 🧩 Guía de Despliegue Automatizado de OpenStack y Dashboard UMA
 
-Este documento describe los pasos necesarios para **instalar OpenStack**, **configurar sus credenciales**, **crear la infraestructura inicial** (imágenes, redes, sabores, claves) y finalmente **lanzar el backend del Dashboard UMA**, basado en **Flask y Gunicorn**.
+Este documento describe cómo desplegar de forma completamente automatizada un entorno **OpenStack all-in-one** mediante **Kolla-Ansible**, incluyendo la creación automática y persistente de la red virtual requerida, así como el despliegue del **backend Flask del Dashboard UMA**.
 
 ---
 
-## ⚙️ Pre-Openstack-installer
+## ⚙️ 0. Introducción
 
-# Crear una topología de red interna virtual
-sudo chmod +x setup-veth.sh
-sudo bash setup-veth.sh
-```
-#!/bin/bash
-set -euo pipefail
+El script principal `openstack-installer.sh` ejecuta **todo el proceso de despliegue**:
 
-BRIDGE="uplinkbridge"
-VETH0="veth0"
-VETH1="veth1"
-SUBNET="10.0.2.0/24"
-GATEWAY="10.0.2.1"
-EXT_IF="ens33"
+- Instalación de dependencias del sistema y Python.  
+- Configuración de Docker y Terraform.  
+- Creación del entorno virtual (`openstack_venv`).  
+- Instalación de **Kolla-Ansible** y **OpenStackClient**.  
+- Creación automática de la topología de red virtual (`uplinkbridge`, `veth0`, `veth1`) con persistencia mediante **systemd**.  
+- Despliegue completo de OpenStack.  
+- Generación de credenciales (`admin-openrc.sh`, `clouds.yaml`).
 
-echo "🔧 Configurando red virtual para OpenStack..."
+---
 
-# Eliminar configuración previa si existe
-if ip link show "$BRIDGE" &>/dev/null; then
-  echo "⚠️  Eliminando bridge existente $BRIDGE..."
-  ip link set "$BRIDGE" down || true
-  brctl delbr "$BRIDGE" || true
-fi
-ip link del "$VETH0" type veth &>/dev/null || true
-ip link del "$VETH1" type veth &>/dev/null || true
+## 🧠 1. Red Virtual Interna Persistente (Auto-Creada)
 
-# Crear par veth
-ip link add "$VETH0" type veth peer name "$VETH1"
-ip link set "$VETH0" up
-ip link set "$VETH1" up
+Durante la instalación, el script configura automáticamente una red virtual que OpenStack usa como:
 
-# Crear bridge y añadir interfaz
-brctl addbr "$BRIDGE"
-brctl addif "$BRIDGE" "$VETH0"
-ip addr add "$GATEWAY/24" dev "$BRIDGE"
-ip link set "$BRIDGE" up
+- **Red de gestión (Management network)** → interfaz principal (por ejemplo, `ens33`).  
+- **Red externa (Neutron external network)** → interfaz virtual `veth1`, conectada al puente `uplinkbridge`.
 
-# Configurar NAT
-iptables -t nat -A POSTROUTING -o "$EXT_IF" -s "$SUBNET" -j MASQUERADE
-iptables -A FORWARD -s "$SUBNET" -j ACCEPT
+Esta red se conserva tras cada reinicio mediante el servicio **systemd** `setup-veth.service`, generado automáticamente por el instalador.
 
-echo "✅ Red virtual configurada:"
-echo "   Bridge: $BRIDGE ($GATEWAY)"
-echo "   Veths:  $VETH0 <-> $VETH1"
-```
+### 📡 Topología Creada
 
+                ┌────────────┐          ┌──────────────┐
+                │   ens33    │◀────────▶│   Internet   │
+                └────────────┘          └──────────────┘
+                        │
+                  [ NAT / iptables ]
+                        │
+                ┌──────────────────────┐
+                │     uplinkbridge     │
+                └──────────────────────┘
+                        │
+                   ┌────┴────┐
+                   │         │
+              ┌────────┐ ┌────────┐
+              │ veth0  │ │ veth1  │
+              └────────┘ └────────┘
 
----------->                  Topología interna creada(Visual)
+🔁 Si el sistema se reinicia, `systemd` ejecuta automáticamente `setup-veth.sh`, garantizando que la red siga activa.
 
+---
 
-                                      ┌────────────┐          ┌──────────────┐
-                                      │  ens33     │◀────────▶│   Internet   │
-                                      └────────────┘          └──────────────┘
-                                              │
-                                        [ NAT / iptables ]
-                                              │
-                                      ┌──────────────────────┐
-                                      │     uplinkbridge     │  ← puente (bridge)
-                                      └──────────────────────┘
-                                              │
-                                          ┌────┴─────┐
-                                          │          │
-                                      ┌───────┐  ┌───────┐
-                                      │ veth0 │  │ veth1 │  ← par de interfaces virtuales conectadas entre sí
-                                      └───────┘  └───────┘
+## ⚙️ 2. Instalación de OpenStack
 
-
-
-## ⚙️ ¿Por qué es importante para Kolla-Ansible?
-
-OpenStack necesita dos tipos de redes en un despliegue all-in-one:
-
-Gestión interna (Management network)
-> se usa ens33 para acceder a los contenedores y servicios internos.
-
-Red externa (Neutron external network)
-> requiere una interfaz física o virtual sin dirección IP (como veth1)
-para crear Floating IPs y tráfico hacia el exterior.
-
-eEecutar el escipt setup-veth.sh  creará esa interfaz virtual (veth1) conectada a un bridge (uplinkbridge) que tiene salida a Internet mediante NAT.
-
-
-
-## ⚙️ Persistencia y recomendaciones
-
-⚠️ Este script crea interfaces temporales:
-si reinicias tu máquina, desaparecerán (uplinkbridge, veth0, veth1).
-
-→ Si quieres que se creen automáticamente al iniciar el sistema, puedes:
-
-  > Guardarlo como /usr/local/bin/setup-veth.sh
-
-  > Añadirlo a /etc/rc.local o un servicio systemd que se ejecute al arranque.
-
-
-
-
-## ⚙️ 1. Instalación de OpenStack
-
-Con el entorno virtual activado y las credenciales cargadas :
+Con el entorno virtual configurado y la red virtual activa, simplemente ejecuta:
 
 ```bash
-source /home/<usuario>/openstack_venv/bin/activate
+sudo bash openstack-installer.sh 2>&1 | tee nombre_del_log.log
 
-Comienza ejecutando el script de instalación:
 
-```bash
-(openstack_venv)$ source openstack-installer.sh
-```
+## 📂 Ubicación y Flujo de Instalación
 
-> 📂 Este archivo debe encontrarse dentro del directorio `openstack-installer`.
+El archivo **`openstack-installer.sh`** se encuentra en el directorio:
 
-Una vez completada la instalación, podrás acceder al **Dashboard web de OpenStack** utilizando las credenciales definidas en:
+## 📂 Ubicación y Flujo de Instalación
 
-```
+El archivo **`openstack-installer.sh`** se encuentra en el directorio:
+
+openstack-installer/
+
+
+Durante la instalación, el script ejecuta automáticamente los siguientes pasos:
+
+1. 🧱 **Crea la red virtual persistente.**  
+2. 🐳 **Instala Docker, Ansible, Kolla-Ansible y Terraform.**  
+3. ⚙️ **Inicializa los contenedores de OpenStack.**  
+4. 🚫 **Desactiva servicios opcionales** (`masakari`, `venus`, `skyline`).  
+5. 📁 **Copia el inventario** en:  
+
+
+/etc/kolla/ansible/inventory/all-in-one
+
+6. 🧩 **Ejecuta**:
+
+
+kolla-ansible post-deploy
+
+para generar credenciales y archivos de configuración finales.
+
+---
+
+## 🔐 3. Credenciales de Acceso
+
+Una vez completada la instalación, se generan automáticamente los siguientes archivos:
+
+
+
+/etc/kolla/admin-openrc.sh
 /etc/kolla/clouds.yaml
-```
-###############################################
-#  Configuración de Credenciales de OpenStack
-# =============================================
-# obtenida del archivo `admin-openrc.sh`
-# descargado desde el Dashboard de OpenStack.
-###############################################
 
-Desde el Dashboard, crea unas **credenciales de aplicación (Application Credentials)** con todos los roles habilitados y sin restricciones.  
-Descarga el archivo de credenciales resultante en formato `.sh` y ejecútalo en tu terminal:
+
+Carga las credenciales de administrador con:
 
 ```bash
-(openstack_venv)$ source admin-openrc.sh
-```
+source /etc/kolla/admin-openrc.sh
 
----
 
-## 🔐 2. Verificación de Credenciales
+Desde el Dashboard de OpenStack (Horizon) puedes generar Application Credentials y descargarlas como archivo .sh para autenticación persistente:
 
-Para comprobar que las credenciales se han cargado correctamente, ejecuta:
+source app-cred-admin-openrc.sh
 
-```bash
-(openstack_venv)$ openstack image list
-```
+🧾 4. Verificación del Entorno
 
-Si aparece un error, significa que las variables no se han exportado correctamente.  
-En ese caso:
+Comprueba el estado de los servicios y recursos básicos:
 
-- Ejecuta de nuevo el archivo `.sh`, o  
-- Copia manualmente su contenido y pégalo en la terminal para exportar las variables de entorno.
+  openstack service list
+  openstack network list
+  openstack image list
+  openstack flavor list
 
-> ✅ Si el comando devuelve la lista de imágenes, las credenciales están configuradas correctamente.
 
----
+✅ Si estos comandos devuelven resultados válidos, el despliegue está operativo.
 
-## 🧱 3. Creación de la Infraestructura Inicial (Terraform)
+Verifica también los contenedores activos:
 
-En esta etapa se generarán los recursos básicos de OpenStack necesarios para la creación de nodos internos:  
-**sabores, imágenes, redes y claves**.
+sudo docker ps --format "table {{.Names}}\t{{.Status}}"
 
-1. Accede al directorio `initial`:
-   ```bash
-   cd initial
-   ```
+🧱 5. Creación de Infraestructura Inicial (Terraform)
 
-2. Ejecuta el script:
-   ```bash
-   (openstack_venv)$ source menu-initial.sh
-   ```
+Una vez desplegado OpenStack, accede al directorio initial para generar los recursos base del entorno UMA:
 
-   Este script creará automáticamente los archivos de configuración de Terraform (`.tf`) correspondientes a imágenes, sabores, redes y claves.
+  cd initial
+  source menu-initial.sh
+  source ejecutar_terraform_inicial.sh
 
-3. Una vez generados, despliega los recursos en OpenStack:
-   ```bash
-   (openstack_venv)$ source ejecutar_terraform_inicial.sh
-   ```
 
-   Esto aplicará todos los cambios utilizando los comandos de Terraform.
 
----
+Estos scripts crean automáticamente redes, imágenes, sabores y claves SSH utilizando Terraform.
 
-## 🔎 4. Verificación de los Recursos Creados
+💻 6. Lanzamiento del Backend del Dashboard UMA
 
-Con el entorno virtual activado y las credenciales cargadas, puedes comprobar que los recursos se han creado correctamente:
+El backend está implementado en Flask + Gunicorn.
+Puedes lanzarlo de dos maneras:
 
-(openstack_venv)$ openstack image list
-(openstack_venv)$ openstack flavor list
-(openstack_venv)$ openstack network list
-(openstack_venv)$ openstack keypair list
-```
-
-> ✅ Si todos los recursos aparecen en la lista, la configuración inicial de OpenStack está completa.
-
----
-
-## 💻 5. Lanzamiento del Backend del Dashboard UMA
-
-El backend del Dashboard UMA está basado en **Flask + Gunicorn** y puede ejecutarse de dos formas.
-
----
-
-### 🟢 OPCIÓN 1 — Lanzamiento directo (sin comprobación de puerto)
-
-En el directorio raíz del proyecto, ejecuta:
-
-```bash
-gunicorn -w 4 -b localhost:5001 app:app
-```
-
-**Desglose del comando:**
-
-| Parámetro | Descripción |
-|------------|-------------|
-| `gunicorn` | Servidor WSGI que ejecuta tu aplicación Flask. |
-| `-w 4` | Inicia 4 *workers* (procesos paralelos). |
-| `-b localhost:5001` | Escucha en el puerto 5001. |
-| `app:app` | Indica el módulo y la instancia Flask (`app = Flask(__name__)`). |
-
-> 💡 Esta opción es útil para entornos de desarrollo o pruebas locales.
-
----
-
-### 🟢 OPCIÓN 2 — Lanzamiento con comprobación del puerto (recomendada)
-
-Para un inicio más seguro y automatizado, utiliza el script **`start_dashboard.sh`**, que realiza comprobaciones previas antes de lanzar Gunicorn.
-
-#### PASO 1 — Asignar permisos de ejecución
-```bash
-chmod +x start_dashboard.sh
-```
-
-#### PASO 2 — Ejecutar el script
-```bash
-(openstack_venv)$ bash start_dashboard.sh 2>&1 | tee nombre_del_log.log
-```
-
-**¿Qué hace este script?**
-
-- Comprueba si el puerto 5001 está en uso.  
-  - Si está libre → continúa.  
-  - Si está ocupado → ejecuta automáticamente `free_port.sh` para liberarlo.
-- Verifica si **Gunicorn** está instalado; si no, lo instala automáticamente.
-- Lanza Gunicorn con los parámetros configurados:
-  ```bash
+🟢 Opción 1 — Ejecución Directa
   gunicorn -w 4 -b localhost:5001 app:app
-  ```
-- Muestra mensajes informativos, por ejemplo:
-  ```
-  ✅ El puerto 5001 está libre.
-  🚀 Iniciando servidor Gunicorn (app:app)...
-  ```
 
----
+🟢 Opción 2 — Ejecución Recomendada
 
-## 🌐 6. Acceso al Dashboard
+Usa el script start_dashboard.sh, que valida el puerto, instala Gunicorn si falta y lanza el servidor automáticamente:
 
-Una vez iniciado el servidor, el backend del Dashboard estará disponible en:
+chmod +x start_dashboard.sh
+(openstack_venv)$ bash start_dashboard.sh 2>&1 | tee dashboard_log.log
 
-👉 [http://localhost:5001](http://localhost:5001)
+🌐 7. Acceso al Dashboard UMA
 
-Desde ahí podrás interactuar con la interfaz web del Dashboard y las APIs de Flask para gestionar los **escenarios, redes y nodos** de tu entorno OpenStack.
+Una vez iniciado el backend, abre en tu navegador:
 
----
-
-
+  👉 http://localhost:5001
