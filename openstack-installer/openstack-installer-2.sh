@@ -197,10 +197,11 @@ echo "✅ Archivos de configuración de Kolla copiados."
 # ============================================================
 # 6️⃣ GENERAR PASSWORDS Y CONFIGURAR GLOBALS
 # ============================================================
-echo "🔹 Generando contraseñas y globals.yml..."
-if [ ! -f /etc/kolla/passwords.yml ]; then
-  kolla-genpwd
-fi
+# ============================================================
+# 6️⃣ Generar passwords y configurar globals.yml
+# ============================================================
+sudo chown "$USER:$USER" /etc/kolla/passwords.yml
+kolla-genpwd || true
 
 SUBNET="192.168.0"
 START=10
