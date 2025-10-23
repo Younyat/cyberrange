@@ -21,6 +21,15 @@ python3 -m venv "$VENV_PATH"
 source "$VENV_PATH/bin/activate"
 
 pip install --upgrade pip setuptools wheel
+# ============================================================
+# 2️⃣ INSTALAR DEPENDENCIAS DEL SISTEMA
+# ============================================================
+echo "🔹 Instalando dependencias del sistema..."
+sudo apt install -y git iptables bridge-utils wget curl dbus pkg-config \
+cmake build-essential libdbus-1-dev libglib2.0-dev sudo gnupg \
+apt-transport-https ca-certificates software-properties-common
+
+# ✅ Ahora ya se puede instalar dbus-python 
 pip install dbus-python docker
 
 # ============================================================
@@ -96,7 +105,7 @@ jmespath==1.0.1
 jsonpatch==1.33
 jsonpointer==3.0.0
 keystoneauth1==5.10.0
-kolla-ansible @ git+https://opendev.org/openstack/kolla-ansible@stable/2024.1
+kolla-ansible @ git+https://opendev.org/openstack/kolla-ansible@master
 MarkupSafe==3.0.2
 msgpack==1.1.0
 netaddr==1.3.0
