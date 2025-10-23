@@ -19,6 +19,8 @@ sudo apt update -y
 sudo apt install -y python3-venv python3-dev libffi-dev gcc libssl-dev
 python3 -m venv "$VENV_PATH"
 source "$VENV_PATH/bin/activate"
+export PATH="$VENV_PATH/bin:$PATH"
+echo "✅ Entorno virtual activado: $(which python)"
 
 pip install --upgrade pip setuptools wheel
 # ============================================================
