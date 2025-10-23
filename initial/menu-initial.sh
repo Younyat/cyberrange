@@ -8,12 +8,32 @@
 # Autor: Younes Assouyat
 # ======================================================
 
-set -e
+set -euo pipefail
 
-BASE_DIR=$(pwd)
+# ------------------------------------------------------
+# 📍 Detectar ruta del script y entorno virtual
+# ------------------------------------------------------
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASE_DIR="$SCRIPT_DIR"
 PROVIDER_FILE="$BASE_DIR/provider.tf"
-GEN_PROVIDER_SCRIPT="./generate_provider_from_clouds.sh"
-CLEAN_SCRIPT="./openstack_full_cleanup.sh"
+GEN_PROVIDER_SCRIPT="$BASE_DIR/generate_provider_from_clouds.sh"
+CLEAN_SCRIPT="$BASE_DIR/openstack_full_cleanup.sh"
+USER_NAME=$(whoami)
+
+# Activar entorno virtual local
+VENV_PATH="$SCRIPT_DIR/../openstack-installer/openstack_venv"
+if [[ -d "$VENV_PATH" ]]; then
+  source "$VENV_PATH/bin/activate"
+  export PATH="$VENV_PATH/bin:$PATH"
+  echo "✅ Entorno virtual activado: $(which python)"
+else
+  echo "⚠️  No se encontró el entorno virtual en $VENV_PATH"
+  echo "   ➜ Ejecuta primero el instalador de OpenStack:"
+  echo "     bash ../openstack-installer/openstack-installer.sh"
+  exit 1
+fi
+
+alias sudo='sudo -E'  # Mantener entorno al usar sudo
 
 echo "==============================================="
 echo "🚀 Iniciando generador principal de Terraform"
@@ -23,20 +43,39 @@ echo "==============================================="
 # 🧹 0️⃣ Limpieza de scripts y permisos de ejecución
 # ------------------------------------------------------
 echo "🔧 Verificando y corrigiendo scripts locales..."
-
 for script in generate_provider_from_clouds.sh debian-linux.sh ubuntu-linux.sh flavors.sh network_generator.sh openstack_full_cleanup.sh; do
-  if [[ -f "./$script" ]]; then
+  if [[ -f "$BASE_DIR/$script" ]]; then
     echo "🧩 Corrigiendo $script ..."
-    # 🔹 Eliminar BOM UTF-8 si existe
-    sed -i '1s/^\xEF\xBB\xBF//' "./$script" 2>/dev/null
-    # 🔹 Convertir formato DOS a UNIX si hay saltos de línea CRLF
-    sed -i 's/\r$//' "./$script" 2>/dev/null
-    # 🔹 Asegurar permisos de ejecución
-    chmod +x "./$script"
+    sudo chown "$USER_NAME:$USER_NAME" "$BASE_DIR/$script"
+    chmod +x "$BASE_DIR/$script"
+    sed -i '1s/^\xEF\xBB\xBF//' "$BASE_DIR/$script" 2>/dev/null
+    sed -i 's/\r$//' "$BASE_DIR/$script" 2>/dev/null
   fi
 done
-
 echo "✅ Scripts corregidos y permisos aplicados."
+echo ""
+
+# ------------------------------------------------------
+# 🛠️ 0.1️⃣ Corregir permisos de archivos sensibles
+# ------------------------------------------------------
+echo "🔐 Corrigiendo permisos en archivos críticos..."
+if [[ -f "/etc/kolla/clouds.yaml" ]]; then
+  sudo chown "$USER_NAME:$USER_NAME" /etc/kolla/clouds.yaml
+  sudo chmod 644 /etc/kolla/clouds.yaml
+  echo "✅ clouds.yaml corregido."
+fi
+
+if [[ -d "/etc/kolla" ]]; then
+  sudo chown -R "$USER_NAME:$USER_NAME" /etc/kolla
+  sudo chmod -R 755 /etc/kolla
+  echo "✅ /etc/kolla corregido."
+fi
+
+sudo rm -f /tmp/clouds.json
+touch /tmp/clouds.json
+sudo chown "$USER_NAME:$USER_NAME" /tmp/clouds.json
+chmod 644 /tmp/clouds.json
+echo "✅ Archivo temporal /tmp/clouds.json preparado."
 echo ""
 
 # ------------------------------------------------------
@@ -45,9 +84,9 @@ echo ""
 if [[ -f "$CLEAN_SCRIPT" ]]; then
   echo "⚠️  Antes de generar los archivos Terraform, puedes limpiar completamente tu entorno OpenStack."
   read -p "¿Deseas ejecutar el script de limpieza total (y/n)? " confirm_cleanup
-  if [[ "$confirm_cleanup" == "y" || "$confirm_cleanup" == "Y" ]]; then
+  if [[ "$confirm_cleanup" =~ ^[Yy]$ ]]; then
     echo "🧹 Ejecutando limpieza completa de OpenStack..."
-    sudo "$CLEAN_SCRIPT"
+    bash "$CLEAN_SCRIPT"   # ⚠️ SIN sudo — mantiene entorno virtual
     echo "✅ Limpieza completada."
   else
     echo "⏭️  Limpieza omitida. Continuando..."
@@ -66,13 +105,15 @@ if [[ -f "/etc/kolla/clouds.yaml" && -f "$GEN_PROVIDER_SCRIPT" ]]; then
 else
     echo "⚠️ No se encontró /etc/kolla/clouds.yaml o el script $GEN_PROVIDER_SCRIPT."
     echo "🚫 No se generará provider.tf hasta que existan ambos archivos."
+    echo ""
     echo "   ➜ Asegúrate de tener:"
     echo "     - /etc/kolla/clouds.yaml"
     echo "     - generate_provider_from_clouds.sh"
     echo ""
     echo "   Luego vuelve a ejecutar:"
-    echo "     bash menu-initial.sh"
+    echo "     bash $(basename "$0")"
     echo ""
+    deactivate
     exit 1
 fi
 
@@ -94,39 +135,19 @@ echo "---"
 # 3️⃣ Ejecutar scripts según la elección
 # ------------------------------------------------------
 if [[ "$image_choice" == "1" || "$image_choice" == "3" ]]; then
-    if [[ -f "./debian-linux.sh" ]]; then
-        echo "💽 Ejecutando script para imagen de Debian..."
-        ./debian-linux.sh
-    else
-        echo "⚠️ Script debian-linux.sh no encontrado."
-    fi
+  [[ -f "$BASE_DIR/debian-linux.sh" ]] && ./debian-linux.sh || echo "⚠️ Script debian-linux.sh no encontrado."
 fi
 
 if [[ "$image_choice" == "2" || "$image_choice" == "3" ]]; then
-    if [[ -f "./ubuntu-linux.sh" ]]; then
-        echo "💽 Ejecutando script para imagen de Ubuntu..."
-        ./ubuntu-linux.sh
-    else
-        echo "⚠️ Script ubuntu-linux.sh no encontrado."
-    fi
+  [[ -f "$BASE_DIR/ubuntu-linux.sh" ]] && ./ubuntu-linux.sh || echo "⚠️ Script ubuntu-linux.sh no encontrado."
 fi
 
-if [[ "$flavors_choice" == "s" || "$flavors_choice" == "S" ]]; then
-    if [[ -f "./flavors.sh" ]]; then
-        echo "⚙️ Ejecutando script para crear sabores..."
-        ./flavors.sh
-    else
-        echo "⚠️ Script flavors.sh no encontrado."
-    fi
+if [[ "$flavors_choice" =~ ^[Ss]$ ]]; then
+  [[ -f "$BASE_DIR/flavors.sh" ]] && ./flavors.sh || echo "⚠️ Script flavors.sh no encontrado."
 fi
 
-if [[ "$network_choice" == "s" || "$network_choice" == "S" ]]; then
-    if [[ -f "./network_generator.sh" ]]; then
-        echo "🌐 Ejecutando script para generar redes y router..."
-        ./network_generator.sh
-    else
-        echo "⚠️ Script network_generator.sh no encontrado."
-    fi
+if [[ "$network_choice" =~ ^[Ss]$ ]]; then
+  [[ -f "$BASE_DIR/network_generator.sh" ]] && ./network_generator.sh || echo "⚠️ Script network_generator.sh no encontrado."
 fi
 
 # ------------------------------------------------------
@@ -140,3 +161,7 @@ echo "   terraform init"
 echo "   terraform apply"
 echo "   terraform apply -auto-approve -parallelism=4"
 echo "para aplicar los cambios en OpenStack."
+
+# Salir del entorno virtual
+deactivate
+

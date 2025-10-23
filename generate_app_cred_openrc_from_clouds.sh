@@ -8,19 +8,41 @@
 #   bash generate_app_cred_openrc_from_clouds.sh 2>&1 | tee log_generate_openrc.log
 # ======================================================
 
-set -e
+set -euo pipefail
 
 KOLLA_CLOUDS="/etc/kolla/clouds.yaml"
 TMP_JSON="/tmp/clouds.json"
 OUTPUT_FILE="admin-openrc.sh"
 CLOUD_NAME="kolla-admin"
+USER_NAME=$(whoami)
 
 echo "==============================================="
 echo "🔐 Generador de admin-openrc.sh para OpenStack"
 echo "==============================================="
 
 # ------------------------------------------------------
-# 🧱 1. Verificar dependencias
+# 🧰 0️⃣ Autocorrección de permisos
+# ------------------------------------------------------
+echo "🔧 Verificando permisos de archivos críticos..."
+if [[ -f "$KOLLA_CLOUDS" ]]; then
+  sudo chown "$USER_NAME:$USER_NAME" "$KOLLA_CLOUDS"
+  sudo chmod 644 "$KOLLA_CLOUDS"
+  echo "✅ Permisos corregidos para $KOLLA_CLOUDS"
+else
+  echo "⚠️  No se encontró $KOLLA_CLOUDS (debe existir antes de continuar)"
+  exit 1
+fi
+
+# Preparar archivo temporal
+sudo rm -f "$TMP_JSON"
+touch "$TMP_JSON"
+sudo chown "$USER_NAME:$USER_NAME" "$TMP_JSON"
+chmod 644 "$TMP_JSON"
+echo "✅ Archivo temporal preparado: $TMP_JSON"
+echo ""
+
+# ------------------------------------------------------
+# 🧱 1️⃣ Verificar dependencias
 # ------------------------------------------------------
 if ! command -v yq >/dev/null 2>&1; then
   echo "📦 Instalando yq (Python version)..."
@@ -38,18 +60,13 @@ else
 fi
 
 # ------------------------------------------------------
-# 📘 2. Convertir /etc/kolla/clouds.yaml a JSON
+# 📘 2️⃣ Convertir /etc/kolla/clouds.yaml a JSON
 # ------------------------------------------------------
-if [ ! -f "$KOLLA_CLOUDS" ]; then
-  echo "❌ No se encontró /etc/kolla/clouds.yaml"
-  exit 1
-fi
-
-echo "✅ Encontrado /etc/kolla/clouds.yaml"
+echo "✅ Convirtiendo $KOLLA_CLOUDS a JSON..."
 yq -r . "$KOLLA_CLOUDS" > "$TMP_JSON"
 
 # ------------------------------------------------------
-# ⚙️ 3. Extraer datos con jq
+# ⚙️ 3️⃣ Extraer datos con jq
 # ------------------------------------------------------
 AUTH_URL=$(jq -r ".clouds.\"$CLOUD_NAME\".auth.auth_url" "$TMP_JSON")
 USERNAME=$(jq -r ".clouds.\"$CLOUD_NAME\".auth.username" "$TMP_JSON")
@@ -60,13 +77,13 @@ PROJECT_DOMAIN=$(jq -r ".clouds.\"$CLOUD_NAME\".auth.project_domain_name" "$TMP_
 REGION_NAME=$(jq -r ".clouds.\"$CLOUD_NAME\".region_name" "$TMP_JSON")
 INTERFACE=$(jq -r ".clouds.\"$CLOUD_NAME\".interface // \"public\"" "$TMP_JSON")
 
-if [ -z "$AUTH_URL" ] || [ "$AUTH_URL" = "null" ]; then
+if [[ -z "$AUTH_URL" || "$AUTH_URL" == "null" ]]; then
   echo "❌ Error: No se pudo leer la configuración del cloud '$CLOUD_NAME' en $KOLLA_CLOUDS."
   exit 1
 fi
 
 # ------------------------------------------------------
-# 🧾 4. Generar admin-openrc.sh
+# 🧾 4️⃣ Generar admin-openrc.sh
 # ------------------------------------------------------
 cat > "$OUTPUT_FILE" <<EOF
 #!/bin/bash
@@ -108,8 +125,10 @@ echo "✅ Credenciales OpenStack cargadas para \$OS_PROJECT_NAME (\$OS_USERNAME)
 EOF
 
 chmod +x "$OUTPUT_FILE"
+chown "$USER_NAME:$USER_NAME" "$OUTPUT_FILE"
+source admin-openrc.sh
+echo "✅ Archivo '$OUTPUT_FILE' generado correctamente y con permisos correctos."
 
-echo "✅ Archivo '$OUTPUT_FILE' generado correctamente."
 echo "📂 Contenido:"
 echo "-----------------------------------------------"
 cat "$OUTPUT_FILE"
@@ -117,3 +136,4 @@ echo "-----------------------------------------------"
 echo ""
 echo "🔧 Puedes usarlo con:"
 echo "   source $OUTPUT_FILE"
+
