@@ -11,16 +11,25 @@ set -x  # Debug mode
 echo "🚀 Iniciando automatización de instalación de OpenStack..."
 
 # ============================================================
-# 1️⃣ CREAR ENTORNO VIRTUAL
+# 1️⃣ CREAR ENTORNO VIRTUAL LOCAL (en el directorio del instalador)
 # ============================================================
-VENV_PATH="$HOME/openstack_venv"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VENV_PATH="$SCRIPT_DIR/openstack_venv"
+
 echo "🔹 Creando entorno virtual en $VENV_PATH..."
 sudo apt update -y
 sudo apt install -y python3-venv python3-dev libffi-dev gcc libssl-dev
+
 python3 -m venv "$VENV_PATH"
+
+# Activar el entorno y exportar PATH
 source "$VENV_PATH/bin/activate"
 export PATH="$VENV_PATH/bin:$PATH"
+
 echo "✅ Entorno virtual activado: $(which python)"
+echo "📦 Entorno creado en: $VENV_PATH"
+
+
 
 pip install --upgrade pip setuptools wheel
 # ============================================================
